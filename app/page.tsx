@@ -16,7 +16,7 @@ export default function Home() {
     <main>
       {/* Header */}
       <header className="bg-navy text-white px-4 py-4 flex items-center justify-between">
-        <h1 className="text-xl font-bold">Carolina Vacuums <span className="italic font-normal">&amp; more</span></h1>
+        <img src="/carolina%20vacs%20logo.png" alt="Carolina Vacuums & More" className="h-12" /> 
       </header>
 
       {/* Hero */}
