@@ -1,3 +1,4 @@
+import Link from 'next/link'
 const stores = [
   'Winston-Salem, NC',
   'Charlotte, NC',
