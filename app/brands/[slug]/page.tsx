@@ -45,8 +45,31 @@ const brands: Record<string, Brand> = {
     name: 'Sebo',
     tagline: 'Uprights & canisters',
     description: 'Sebo vacuums are known for their powerful brush rolls and long-lasting build quality.',
-    lineup: [],
-  },
+    lineup: [
+      {
+        category: 'Upright',
+        products: [
+          { model: 'Automatic X7 Premium', variants: ['Pet', 'Onyx'] },
+          { model: 'Automatic X4', variants: ['Boost'] },
+          { model: 'Essential G4', variants: [] },
+          { model: 'Felix Premium', variants: [] },
+          { model: 'Dart', variants: [] },
+        ],
+      },
+      {
+        category: 'Canister',
+        products: [
+          { model: 'Airbelt D4', variants: ['Premium'] },
+          { model: 'Airbelt D1', variants: ['Turbo'] },
+          { model: 'Airbelt E3', variants: ['Premium', 'Premium Pastels'] },
+          { model: 'Airbelt K3', variants: ['Premium', 'Premium Pastels'] },
+          { model: 'Airbelt E2', variants: ['Turbo'] },
+          { model: 'Airbelt K2', variants: ['Turbo', 'Kombi'] },
+        ],
+      },
+    ],
+  }, 
+
   riccar: {
     name: 'Riccar',
     tagline: 'World-class clean',
