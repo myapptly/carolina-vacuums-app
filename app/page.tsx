@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import logo from '../carolina vacs logo.png'
 
 const stores = [
   { name: 'Winston-Salem, NC', phone: '336-768-6068', email: 'carolinavacs02@gmail.com', note: 'Original store — open since 1995' },
@@ -16,7 +17,7 @@ export default function Home() {
     <main>
       {/* Header */}
       <header className="bg-navy text-white px-4 py-4 flex items-center justify-between">
-        <img src={carolina%20vacs%20logo.src}alt="Carolina Vacuums & More" className="h-12" /> 
+      <img src={logo.src} alt="Carolina Vacuums & More" className="h-12" />    
       </header>
 
       {/* Hero */}
