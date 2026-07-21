@@ -74,8 +74,27 @@ const brands: Record<string, Brand> = {
     name: 'Riccar',
     tagline: 'World-class clean',
     description: 'Riccar vacuums are American-made with a focus on serviceability and strong suction.',
-    lineup: [],
-  },
+    lineup: [
+      {
+        category: 'Upright',
+        products: [
+          { model: 'Brilliance R30D', variants: [] },
+          { model: 'Supralite Ultimate R17', variants: [] },
+          { model: 'Supralite Premium R10P', variants: [] },
+          { model: 'Supralite Standard R10S', variants: [] },
+          { model: 'Supralite Entry R10E', variants: [] },
+        ],
+      },
+      {
+        category: 'Cordless',
+        products: [
+          { model: 'Supralite Cordless R10CV', variants: [] },
+          { model: 'R65 Cordless', variants: [] },
+        ],
+      },
+    ],
+  }, 
+
   oreck: {
     name: 'Oreck',
     tagline: 'Lightweight uprights',
