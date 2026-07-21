@@ -1,14 +1,23 @@
+'use client'
+
 import Link from 'next/link'
+import { useState } from 'react'
 
 const brands = [
-  { name: 'Miele', tagline: 'Premium canisters & cordless' },
-  { name: 'Sebo', tagline: 'Uprights & canisters' },
-  { name: 'Riccar', tagline: 'World-class clean' },
-  { name: 'Oreck', tagline: 'Lightweight uprights' },
-  { name: 'Simplicity', tagline: 'Bagged uprights' },
+  { slug: 'miele', name: 'Miele', tagline: 'Premium canisters & cordless' },
+  { slug: 'sebo', name: 'Sebo', tagline: 'Uprights & canisters' },
+  { slug: 'riccar', name: 'Riccar', tagline: 'World-class clean' },
+  { slug: 'oreck', name: 'Oreck', tagline: 'Lightweight uprights' },
+  { slug: 'simplicity', name: 'Simplicity', tagline: 'Bagged uprights' },
 ]
 
 export default function Brands() {
+  const [query, setQuery] = useState('')
+
+  const filtered = brands.filter((b) =>
+    b.name.toLowerCase().includes(query.toLowerCase())
+  )
+
   return (
     <main className="px-4 py-6">
       <Link href="/" className="text-navy mb-4 inline-block">&lsaquo; Back</Link>
@@ -16,21 +25,30 @@ export default function Brands() {
 
       <input
         type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
         placeholder="Search products or brands…"
         className="w-full border rounded px-3 py-2 mb-6"
       />
 
       <h3 className="font-semibold text-lg mb-3">Featured Brands</h3>
       <div className="space-y-3">
-        {brands.map((b) => (
-          <div key={b.name} className="border rounded p-4 flex items-center justify-between">
+        {filtered.map((b) => (
+          <Link
+            key={b.slug}
+            href={`/brands/${b.slug}`}
+            className="border rounded p-4 flex items-center justify-between"
+          >
             <div>
               <p className="font-bold">{b.name}</p>
               <p className="text-sm text-gray-500">{b.tagline}</p>
             </div>
             <span className="text-navy text-xl">&rsaquo;</span>
-          </div>
+          </Link>
         ))}
+        {filtered.length === 0 && (
+          <p className="text-gray-500 text-center py-6">No brands match "{query}"</p>
+        )}
       </div>
 
       <p className="text-sm text-gray-500 mt-6 text-center">
