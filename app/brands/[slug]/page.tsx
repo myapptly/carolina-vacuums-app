@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 type Product = {
   model: string
   variants: string[]
+  description?: string
 }
 
 type Category = {
@@ -27,16 +28,16 @@ const brands: Record<string, Brand> = {
       {
         category: 'Canister',
         products: [
-          { model: 'Guard L1', variants: ['Electro Titanium', 'Nordic Blue', 'Cat & Dog', 'All Floor'] },
-          { model: 'Guard M1', variants: ['Cat & Dog'] },
-          { model: 'Guard M1', variants: [] },
+          { model: 'Guard L1', variants: ['Electro Titanium', 'Nordic Blue', 'Cat & Dog', 'All Floor'], description: 'Bagged canister with foot-adjustable suction, sealed HEPA-level filtration, and a floorhead rated for 20 years of use.' },
+          { model: 'Guard M1', variants: ['Cat & Dog'], description: 'Compact bagged canister with the same sealed filtration and durability as the L1 in a smaller, lighter body.' },
+          { model: 'Guard M1', variants: [], description: 'Compact bagged canister with the same sealed filtration and durability as the L1 in a smaller, lighter body.' },
         ],
       },
       {
         category: 'Cordless',
         products: [
-          { model: 'Triflex HX1', variants: ['Facelift Black', 'Facelift White', 'Facelift Plus'] },
-          { model: 'Triflex HX2', variants: ['Lotus White', 'Flash', 'Cat & Dog'] },
+          { model: 'Triflex HX1', variants: ['Facelift Black', 'Facelift White', 'Facelift Plus'], description: 'Cordless 3-in-1 stick vacuum that reconfigures between stick, handheld, and self-standing modes, with up to 60 minutes of runtime.' },
+          { model: 'Triflex HX2', variants: ['Lotus White', 'Flash', 'Cat & Dog'], description: "Miele's most powerful cordless stick vacuum, roughly 60% stronger suction than the HX1 with hygienic self-cleaning filtration." },
         ],
       },
     ],
@@ -44,32 +45,31 @@ const brands: Record<string, Brand> = {
   sebo: {
     name: 'Sebo',
     tagline: 'Uprights & canisters',
-    description: 'Sebo vacuums are known for their powerful suction, 10 year warranties, and long-lasting build quality.',
+    description: 'Sebo vacuums are known for their powerful brush rolls and long-lasting build quality.',
     lineup: [
       {
         category: 'Upright',
         products: [
-          { model: 'Automatic X7 Premium', variants: ['Pet', 'Onyx'] },
-          { model: 'Automatic X4', variants: ['Boost'] },
-          { model: 'Essential G4', variants: [] },
-          { model: 'Felix Premium', variants: [] },
-          { model: 'Dart', variants: [] },
+          { model: 'Automatic X7 Premium', variants: ['Pet', 'Onyx'], description: 'Fully automatic height-adjusting upright with two brush agitation modes and hospital-grade filtration, ideal for mixed flooring and pets.' },
+          { model: 'Automatic X4', variants: ['Boost'], description: 'Automatic height adjustment with a boost button for deeper carpet agitation on demand.' },
+          { model: 'Essential G4', variants: [], description: 'Commercial-grade upright with manual 4-level height adjustment, built for heavy daily use.' },
+          { model: 'Felix Premium', variants: [], description: 'Lightweight upright that converts to a handheld, with 180° swivel steering and adjustable suction control.' },
+          { model: 'Dart', variants: [], description: 'Ultra-quiet upright with canister-style flexibility, an instant-use hose, and a detachable handheld unit.' },
         ],
       },
       {
         category: 'Canister',
         products: [
-          { model: 'Airbelt D4', variants: ['Premium'] },
-          { model: 'Airbelt D1', variants: ['Turbo'] },
-          { model: 'Airbelt E3', variants: ['Premium', 'Premium Pastels'] },
-          { model: 'Airbelt K3', variants: ['Premium', 'Premium Pastels'] },
-          { model: 'Airbelt E2', variants: ['Turbo'] },
-          { model: 'Airbelt K2', variants: ['Turbo', 'Kombi'] },
+          { model: 'Airbelt D4', variants: ['Premium'], description: 'Full-size canister with a giant bag, 52-foot cleaning radius, and the electric ET-1 power head for deep carpet cleaning.' },
+          { model: 'Airbelt D1', variants: ['Turbo'], description: 'Full-size canister with an air-driven turbo head instead of a motorized brush — strong on hard floors and low-pile carpet.' },
+          { model: 'Airbelt E3', variants: ['Premium', 'Premium Pastels'], description: 'Mid-size canister with a dual-control handle and the ET-1 power head for carpets and hard floors.' },
+          { model: 'Airbelt K3', variants: ['Premium', 'Premium Pastels'], description: 'Compact, lightweight canister with the same ET-1 power head as the larger D and E series, ideal for smaller homes.' },
+          { model: 'Airbelt E2', variants: ['Turbo'], description: 'Straight-suction canister with an air-driven turbo head for rugs and a parquet brush for hard floors.' },
+          { model: 'Airbelt K2', variants: ['Turbo', 'Kombi'], description: 'Straight-suction canister for hard floors and rugs, with a combination nozzle and retractable bristles.' },
         ],
       },
     ],
-  }, 
-
+  },
   riccar: {
     name: 'Riccar',
     tagline: 'World-class clean',
@@ -78,44 +78,40 @@ const brands: Record<string, Brand> = {
       {
         category: 'Upright',
         products: [
-          { model: 'Brilliance R30D', variants: [] },
-          { model: 'Supralite Ultimate R17', variants: [] },
-          { model: 'Supralite Premium R10P', variants: [] },
-          { model: 'Supralite Standard R10S', variants: [] },
-          { model: 'Supralite Entry R10E', variants: [] },
+          { model: 'Brilliance R30D', variants: [], description: 'Dual-motor Tandem Air upright with 6-position height adjustment and multi-stage HEPA and charcoal filtration.' },
+          { model: 'Supralite Ultimate R17', variants: [], description: 'Ultra-lightweight upright with a soft carpet baseplate for plush carpet and a 40-foot cord.' },
+          { model: 'Supralite Premium R10P', variants: [], description: 'Lightweight upright with a lifetime belt, jam-sensing protection, and a 40-foot cord.' },
+          { model: 'Supralite Standard R10S', variants: [], description: 'Lightweight two-speed upright with HEPA filtration and a bare-floor squeegee.' },
+          { model: 'Supralite Entry R10E', variants: [], description: 'Entry-level lightweight upright with the essentials — wood brushroll, 30-foot cord, and paper bag.' },
         ],
       },
       {
         category: 'Cordless',
         products: [
-          { model: 'Supralite Cordless R10CV', variants: [] },
-          { model: 'R65 Cordless', variants: [] },
-        ],
-      },
-    ],
-  }, 
-
-  oreck: {
-    name: 'Oreck and Other Great Brands',
-    tagline: 'Lightweight uprights & more',
-    description: 'Home to Oreck plus a curated lineup of other trusted lightweight and specialty vacuum brands.',
-    lineup: [
-      {
-        category: 'Oreck, Simplicity, CleanMax, Clean Obsessed, Nellies & Other',
-        products: [
-          { model: 'CleanMax Zoom 200', variants: [] },
-          { model: 'Oreck Command', variants: [] },
-          { model: 'Oreck Discover', variants: [] },
-          { model: 'Oreck U2000', variants: [] },
-          { model: 'Oreck XL2100', variants: [] },
-          { model: 'Oreck Orbiter ORB700MB', variants: [] },
-          { model: 'Simplicity Allergy S20EZM', variants: [] },
-          { model: 'Nellies WOW TOO V2', variants: [] },
+          { model: 'Supralite Cordless R10CV', variants: [], description: 'Cordless version of the Supralite line with a 44-volt battery and up to 50 minutes of runtime.' },
+          { model: 'R65 Cordless', variants: [], description: 'Cordless stick vacuum with smart dust-sensing suction and dual HEPA filters, up to 40 minutes of runtime.' },
         ],
       },
     ],
   },
-
+  oreck: {
+    name: 'Oreck, Simplicity & More',
+    tagline: 'Lightweight & specialty vacuums',
+    description: 'A curated lineup of lightweight and specialty vacuums from Oreck, Simplicity, and other trusted brands.',
+    lineup: [
+      {
+        category: 'All Models',
+        products: [
+          { model: 'CleanMax Zoom 200', variants: [], description: 'An 8-pound commercial-grade upright with a powerful 5.5-amp motor and automatic height adjustment.' },
+          { model: 'Oreck Command', variants: [], description: 'Lightweight bagged upright with allergen-trapping filtration and an extra-large capacity bag.' },
+          { model: 'Oreck Discover', variants: [], description: 'One of the lightest full-powered uprights available, with swivel steering and a HEPA media bag.' },
+          { model: 'Oreck U2000', variants: [], description: 'Commercial-grade upright with tool-free carpet-to-bare-floor transition and a top-fill bag design.' },
+          { model: 'Oreck XL2100', variants: [], description: 'Commercial upright similar to the U2000 with a high-speed brush roll and a 35-foot cord.' },
+          { model: 'Simplicity Allergy S20EZM', variants: [], description: 'HEPA-filtered upright with a metal brushroll and 5-position height adjustment for allergy-prone homes.' },
+        ],
+      },
+    ],
+  },
   handheld: {
     name: 'Handheld Vacuums',
     tagline: 'Quick cleanups & spot cleaning',
@@ -124,22 +120,21 @@ const brands: Record<string, Brand> = {
       {
         category: 'All Models',
         products: [
-          { model: 'Riccar SupraQuik RSQ-1', variants: [] },
-          { model: 'Oreck Buster B Ultimate BB-1200', variants: [] },
-          { model: 'Oreck Buster B Classic BB-800', variants: [] },
-          { model: 'Clean Obsessed Commercial CO711', variants: [] },
-          { model: 'Sonic Power MiniVac', variants: [] },
+          { model: 'Riccar SupraQuik RSQ-1', variants: [], description: 'A 4.5-lb portable canister vacuum with a shoulder strap, odor-absorbing filter, and full tool kit for stairs and vehicles.' },
+          { model: 'Oreck Buster B Ultimate BB-1200', variants: [], description: 'Compact canister/handheld with HEPA bagged filtration, a telescoping wand, and a carry strap.' },
+          { model: 'Oreck Buster B Classic BB-800', variants: [], description: 'Lightweight canister/handheld from the same Buster B family, built for quick cleanups in tight spaces.' },
+          { model: 'Clean Obsessed Commercial CO711', variants: [], description: 'Under-10-lb commercial canister with 115+ inches of waterlift and HEPA filtration.' },
+          { model: 'Sonic Power MiniVac', variants: [], description: 'Compact cordless handheld with 3 speeds, swappable attachments, and a washable filter.' },
         ],
       },
     ],
   },
-
   'maison-berger': {
     name: 'Maison Berger',
     tagline: 'Scented air purification',
     description: 'Successfully combining tradition and modernity, Maison Berger Paris is a unique brand in the world of home fragrances. Perfume is the heart of our business, the DNA of all our product ranges. Designed in 1898 to purify the air in hospitals, the small catalytic lamp created by pharmacy dispenser Maurice Berger quickly became popular with the public. Redesigned by famous designers and embraced by figures like Coco Chanel, Picasso, Colette, and Jean Cocteau, it became a style icon appreciated for its sleek design and delicate fragrances.',
     lineup: [],
-  }, 
+  },
 }
 
 export default function BrandDetail({ params }: { params: { slug: string } }) {
@@ -154,7 +149,7 @@ export default function BrandDetail({ params }: { params: { slug: string } }) {
       <p className="text-gray-700 mb-6">{brand.description}</p>
 
       {brand.lineup.length === 0 && (
-        <p className="text-gray-500 mb-6">We have a wide selection of kits and scents — call or visit a store for current {brand.name} availability.</p>
+        <p className="text-gray-500 mb-6">Full lineup coming soon — call or visit a store for current {brand.name} availability.</p>
       )}
 
       {brand.lineup.map((cat) => (
@@ -165,7 +160,10 @@ export default function BrandDetail({ params }: { params: { slug: string } }) {
               <div key={i} className="border rounded p-4">
                 <p className="font-semibold">{p.model}</p>
                 {p.variants.length > 0 && (
-                  <p className="text-sm text-gray-500">{p.variants.join(' · ')}</p>
+                  <p className="text-sm text-gray-500 mb-1">{p.variants.join(' · ')}</p>
+                )}
+                {p.description && (
+                  <p className="text-sm text-gray-600">{p.description}</p>
                 )}
               </div>
             ))}
