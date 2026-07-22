@@ -97,17 +97,22 @@ const brands: Record<string, Brand> = {
 
   oreck: {
     name: 'Oreck',
-    tagline: 'Lightweight uprights',
-    description: 'Oreck vacuums are famous for being lightweight without sacrificing power.',
-    lineup: [],
-  },
-  simplicity: {
-    name: 'Simplicity',
-    tagline: 'Bagged uprights',
-    description: 'Simplicity vacuums offer reliable, no-frills bagged cleaning built to last.',
-    lineup: [],
-  },
-}
+    tagline: 'Lightweight uprights & more',
+    description: 'Home to Oreck plus a curated lineup of other trusted lightweight and specialty vacuum brands.',
+    lineup: [
+      {
+        category: 'Oreck, Simplicity, CleanMax, Clean Obsessed & Other',
+        products: [
+          { model: 'CleanMax Zoom 200', variants: [] },
+          { model: 'Oreck Command', variants: [] },
+          { model: 'Oreck Discover', variants: [] },
+          { model: 'Oreck U2000', variants: [] },
+          { model: 'Oreck XL2100', variants: [] },
+          { model: 'Simplicity Allergy S20EZM', variants: [] },
+        ],
+      },
+    ],
+  }, 
 
 export default function BrandDetail({ params }: { params: { slug: string } }) {
   const brand = brands[params.slug]
