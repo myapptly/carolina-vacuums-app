@@ -103,7 +103,7 @@ export const productImageByModel: Record<string, string> = {
   'Supralite Standard R10S': productImages['riccar-supralite-r10s'],
   'Supralite Entry R10E': productImages['riccar-supralite-r10e'],
   'R65 Cordless': productImages['riccar-r65'],
-  /'Supralite Cordless R10CV': productImages['riccar-supralite-r10cv'], 
+  'Supralite Cordless R10CV': productImages['riccar-supralite-r10cv'], 
 
   'CleanMax Zoom 200': productImages['cleanmax-zoom-200'],
   'Oreck Command': productImages['oreck-elevate-command'],
