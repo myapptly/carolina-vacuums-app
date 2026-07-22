@@ -1,8 +1,3 @@
-
-Terry Bledsoe <tbledsoe1954@gmail.com>
-9:08 AM (0 minutes ago)
-to me
-
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
