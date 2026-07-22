@@ -44,7 +44,7 @@ const brands: Record<string, Brand> = {
   sebo: {
     name: 'Sebo',
     tagline: 'Uprights & canisters',
-    description: 'Sebo vacuums are known for their powerful brush rolls and long-lasting build quality.',
+    description: 'Sebo vacuums are known for their powerful suction, 10 year warranties, and long-lasting build quality.',
     lineup: [
       {
         category: 'Upright',
