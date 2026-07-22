@@ -101,14 +101,16 @@ const brands: Record<string, Brand> = {
     description: 'Home to Oreck plus a curated lineup of other trusted lightweight and specialty vacuum brands.',
     lineup: [
       {
-        category: 'Oreck, Simplicity, CleanMax, Clean Obsessed & Other',
+        category: 'Oreck, Simplicity, CleanMax, Clean Obsessed, Nellies & Other',
         products: [
           { model: 'CleanMax Zoom 200', variants: [] },
           { model: 'Oreck Command', variants: [] },
           { model: 'Oreck Discover', variants: [] },
           { model: 'Oreck U2000', variants: [] },
           { model: 'Oreck XL2100', variants: [] },
+          { model: 'Oreck Orbiter ORB700MB', variants: [] },
           { model: 'Simplicity Allergy S20EZM', variants: [] },
+          { model: 'Nellies WOW TOO V2', variants: [] },
         ],
       },
     ],
