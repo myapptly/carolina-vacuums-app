@@ -154,7 +154,7 @@ export default function BrandDetail({ params }: { params: { slug: string } }) {
       <p className="text-gray-700 mb-6">{brand.description}</p>
 
       {brand.lineup.length === 0 && (
-        <p className="text-gray-500 mb-6">Full lineup coming soon — call or visit a store for current {brand.name} availability.</p>
+        <p className="text-gray-500 mb-6">We have a wide selection of kits and scents — call or visit a store for current {brand.name} availability.</p>
       )}
 
       {brand.lineup.map((cat) => (
