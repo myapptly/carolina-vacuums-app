@@ -10,7 +10,13 @@ const stores = [
   { name: 'Raleigh, NC', phone: '919-484-2288', email: 'carolinavacs15@gmail.com' },
 ]
 
-const brands = ['Miele', 'Sebo', 'Riccar', 'Simplicity', 'Oreck']
+const brands = [
+  { name: 'Miele', slug: 'miele' },
+  { name: 'Sebo', slug: 'sebo' },
+  { name: 'Riccar', slug: 'riccar' },
+  { name: 'Oreck, Simplicity & More', slug: 'oreck' },
+  { name: 'Handheld Vacuums', slug: 'handheld' },
+]
 
 export default function Home() {
   return (
