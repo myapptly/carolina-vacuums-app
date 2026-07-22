@@ -16,6 +16,7 @@ const brands = [
   { name: 'Riccar', slug: 'riccar' },
   { name: 'Oreck, Simplicity & More', slug: 'oreck' },
   { name: 'Handheld Vacuums', slug: 'handheld' },
+  { name: 'Maison Berger', slug: 'maison-berger' },
 ]
 
 export default function Home() {
