@@ -75,4 +75,44 @@ export const productImages: Record<string, string> = {
   'clean-obsessed-co711': cleanObsessedCO711.src,
   'sonic-power-minivac': sonicPowerMiniVac.src,
   // 'riccar-supralite-r10cv': still missing — add once uploaded
-}; 
+};
+
+export const productImageByModel: Record<string, string> = {
+  'Guard L1': productImages['miele-guard-l1'],
+  'Guard M1': productImages['miele-guard-m1'],
+  'Triflex HX1': productImages['miele-triflex-hx1'],
+  'Triflex HX2': productImages['miele-triflex-hx2'],
+
+  'Automatic X7 Premium': productImages['sebo-automatic-x7'],
+  'Automatic X4': productImages['sebo-automatic-x4'],
+  'Essential G4': productImages['sebo-essential-g4'],
+  'Felix Premium': productImages['sebo-felix-premium'],
+  'Dart': productImages['sebo-dart'],
+  'Airbelt D4': productImages['sebo-airbelt-d4'],
+  'Airbelt D1': productImages['sebo-airbelt-d1'],
+  'Airbelt E3': productImages['sebo-airbelt-e3'],
+  'Airbelt K3': productImages['sebo-airbelt-k3'],
+  'Airbelt E2': productImages['sebo-airbelt-e2'],
+  'Airbelt K2': productImages['sebo-airbelt-k2'],
+
+  'Brilliance R30D': productImages['riccar-brilliance-r30d'],
+  'Supralite Ultimate R17': productImages['riccar-supralite-r17'],
+  'Supralite Premium R10P': productImages['riccar-supralite-r10p'],
+  'Supralite Standard R10S': productImages['riccar-supralite-r10s'],
+  'Supralite Entry R10E': productImages['riccar-supralite-r10e'],
+  'R65 Cordless': productImages['riccar-r65'],
+  // 'Supralite Cordless R10CV': still missing an image
+
+  'CleanMax Zoom 200': productImages['cleanmax-zoom-200'],
+  'Oreck Command': productImages['oreck-elevate-command'],
+  'Oreck Discover': productImages['oreck-discover'],
+  'Oreck U2000': productImages['oreck-u2000'],
+  'Oreck XL2100': productImages['oreck-xl2100'],
+  'Simplicity Allergy S20EZM': productImages['simplicity-s20ezm'],
+
+  'Riccar SupraQuik RSQ-1': productImages['riccar-supraquik-rsq1'],
+  'Oreck Buster B Ultimate BB-1200': productImages['oreck-bb1200'],
+  'Oreck Buster B Classic BB-800': productImages['oreck-bb800'],
+  'Clean Obsessed Commercial CO711': productImages['clean-obsessed-co711'],
+  'Sonic Power MiniVac': productImages['sonic-power-minivac'],
+};
