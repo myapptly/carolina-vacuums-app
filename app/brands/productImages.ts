@@ -23,6 +23,7 @@ import riccarR17 from '../../r17.png';
 import riccarR30D from '../../r30d.png';
 import riccarR65 from '../../r65.png';
 import riccarRSQ1 from '../../rsq 1.png';
+import riccarR10CV from '../riccar-r10-cv.png'; 
 
 import oreckBB1200 from '../../bb1200.png';
 import oreckBB800 from '../../bb880.png';
@@ -62,6 +63,7 @@ export const productImages: Record<string, string> = {
   'riccar-brilliance-r30d': riccarR30D.src,
   'riccar-r65': riccarR65.src,
   'riccar-supraquik-rsq1': riccarRSQ1.src,
+  'riccar-supralite-r10cv': riccarR10CV.src, 
 
   'oreck-bb1200': oreckBB1200.src,
   'oreck-bb800': oreckBB800.src,
@@ -101,7 +103,7 @@ export const productImageByModel: Record<string, string> = {
   'Supralite Standard R10S': productImages['riccar-supralite-r10s'],
   'Supralite Entry R10E': productImages['riccar-supralite-r10e'],
   'R65 Cordless': productImages['riccar-r65'],
-  // 'Supralite Cordless R10CV': still missing an image
+  /'Supralite Cordless R10CV': productImages['riccar-supralite-r10cv'], 
 
   'CleanMax Zoom 200': productImages['cleanmax-zoom-200'],
   'Oreck Command': productImages['oreck-elevate-command'],
