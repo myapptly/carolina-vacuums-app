@@ -132,6 +132,13 @@ const brands: Record<string, Brand> = {
         ],
       },
     ],
+  },
+
+  'maison-berger': {
+    name: 'Maison Berger',
+    tagline: 'Scented air purification',
+    description: 'Successfully combining tradition and modernity, Maison Berger Paris is a unique brand in the world of home fragrances. Perfume is the heart of our business, the DNA of all our product ranges. Designed in 1898 to purify the air in hospitals, the small catalytic lamp created by pharmacy dispenser Maurice Berger quickly became popular with the public. Redesigned by famous designers and embraced by figures like Coco Chanel, Picasso, Colette, and Jean Cocteau, it became a style icon appreciated for its sleek design and delicate fragrances.',
+    lineup: [],
   }, 
 }
 
