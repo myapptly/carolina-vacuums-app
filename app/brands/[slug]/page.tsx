@@ -1,3 +1,8 @@
+
+Terry Bledsoe <tbledsoe1954@gmail.com>
+9:08 AM (0 minutes ago)
+to me
+
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -100,7 +105,7 @@ const brands: Record<string, Brand> = {
     description: 'A curated lineup of lightweight and specialty vacuums from Oreck, Simplicity, and other trusted brands.',
     lineup: [
       {
-        category: 'All Models',
+        category: 'Upright',
         products: [
           { model: 'CleanMax Zoom 200', variants: [], description: 'An 8-pound commercial-grade upright with a powerful 5.5-amp motor and automatic height adjustment.' },
           { model: 'Oreck Command', variants: [], description: 'Lightweight bagged upright with allergen-trapping filtration and an extra-large capacity bag.' },
@@ -118,7 +123,7 @@ const brands: Record<string, Brand> = {
     description: 'Compact, portable vacuums for cars, stairs, and quick jobs around the house.',
     lineup: [
       {
-        category: 'All Models',
+        category: 'Handheld',
         products: [
           { model: 'Riccar SupraQuik RSQ-1', variants: [], description: 'A 4.5-lb portable canister vacuum with a shoulder strap, odor-absorbing filter, and full tool kit for stairs and vehicles.' },
           { model: 'Oreck Buster B Ultimate BB-1200', variants: [], description: 'Compact canister/handheld with HEPA bagged filtration, a telescoping wand, and a carry strap.' },
@@ -135,6 +140,66 @@ const brands: Record<string, Brand> = {
     description: 'Successfully combining tradition and modernity, Maison Berger Paris is a unique brand in the world of home fragrances. Perfume is the heart of our business, the DNA of all our product ranges. Designed in 1898 to purify the air in hospitals, the small catalytic lamp created by pharmacy dispenser Maurice Berger quickly became popular with the public. Redesigned by famous designers and embraced by figures like Coco Chanel, Picasso, Colette, and Jean Cocteau, it became a style icon appreciated for its sleek design and delicate fragrances.',
     lineup: [],
   },
+}
+
+function CategoryIcon({ category }: { category: string }) {
+  const c = category.toLowerCase()
+
+  if (c.includes('upright')) {
+    return (
+      <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="21" y="6" width="6" height="26" rx="2" />
+        <path d="M27 8 L38 4" strokeLinecap="round" />
+        <rect x="14" y="32" width="20" height="8" rx="2" />
+        <circle cx="18" cy="42" r="2" fill="currentColor" stroke="none" />
+        <circle cx="30" cy="42" r="2" fill="currentColor" stroke="none" />
+      </svg>
+    )
+  }
+
+  if (c.includes('canister')) {
+    return (
+      <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="8" y="24" width="20" height="12" rx="4" />
+        <circle cx="12" cy="38" r="2" fill="currentColor" stroke="none" />
+        <circle cx="24" cy="38" r="2" fill="currentColor" stroke="none" />
+        <path d="M28 28 C36 28 38 20 34 14" strokeLinecap="round" />
+        <path d="M34 14 L40 10" strokeLinecap="round" />
+        <rect x="38" y="6" width="4" height="8" rx="1" />
+      </svg>
+    )
+  }
+
+  if (c.includes('cordless')) {
+    return (
+      <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="20" y="6" width="8" height="14" rx="2" />
+        <path d="M22 10 h4" strokeLinecap="round" />
+        <rect x="19" y="20" width="10" height="16" rx="2" />
+        <path d="M16 36 h16 l-2 6 h-12 z" />
+      </svg>
+    )
+  }
+
+  if (c.includes('handheld')) {
+    return (
+      <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="14" y="18" width="16" height="10" rx="3" />
+        <path d="M28 21 L38 17" strokeLinecap="round" />
+        <path d="M14 22 L6 22" strokeLinecap="round" />
+        <path d="M20 28 L20 34" strokeLinecap="round" />
+      </svg>
+    )
+  }
+
+  return (
+    <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="2">
+      <rect x="21" y="6" width="6" height="26" rx="2" />
+      <rect x="14" y="32" width="20" height="8" rx="2" />
+      <circle cx="18" cy="42" r="2" fill="currentColor" stroke="none" />
+      <circle cx="30" cy="42" r="2" fill="currentColor" stroke="none" />
+    </svg>
+  )
 }
 
 export default function BrandDetail({ params }: { params: { slug: string } }) {
@@ -157,14 +222,19 @@ export default function BrandDetail({ params }: { params: { slug: string } }) {
           <h3 className="text-xl font-bold mb-3">{cat.category}</h3>
           <div className="space-y-3">
             {cat.products.map((p, i) => (
-              <div key={i} className="border rounded p-4">
-                <p className="font-semibold">{p.model}</p>
-                {p.variants.length > 0 && (
-                  <p className="text-sm text-gray-500 mb-1">{p.variants.join(' · ')}</p>
-                )}
-                {p.description && (
-                  <p className="text-sm text-gray-600">{p.description}</p>
-                )}
+              <div key={i} className="border rounded p-4 flex gap-3">
+                <div className="flex-shrink-0 text-navy bg-gray-50 rounded p-2 h-fit">
+                  <CategoryIcon category={cat.category} />
+                </div>
+                <div>
+                  <p className="font-semibold">{p.model}</p>
+                  {p.variants.length > 0 && (
+                    <p className="text-sm text-gray-500 mb-1">{p.variants.join(' · ')}</p>
+                  )}
+                  {p.description && (
+                    <p className="text-sm text-gray-600">{p.description}</p>
+                  )}
+                </div>
               </div>
             ))}
           </div>
