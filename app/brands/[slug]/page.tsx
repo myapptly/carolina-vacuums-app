@@ -96,7 +96,7 @@ const brands: Record<string, Brand> = {
   }, 
 
   oreck: {
-    name: 'Oreck',
+    name: 'Oreck and Other Great Brands',
     tagline: 'Lightweight uprights & more',
     description: 'Home to Oreck plus a curated lineup of other trusted lightweight and specialty vacuum brands.',
     lineup: [
@@ -113,6 +113,24 @@ const brands: Record<string, Brand> = {
       },
     ],
   },
+
+  handheld: {
+    name: 'Handheld Vacuums',
+    tagline: 'Quick cleanups & spot cleaning',
+    description: 'Compact, portable vacuums for cars, stairs, and quick jobs around the house.',
+    lineup: [
+      {
+        category: 'All Models',
+        products: [
+          { model: 'Riccar SupraQuik RSQ-1', variants: [] },
+          { model: 'Oreck Buster B Ultimate BB-1200', variants: [] },
+          { model: 'Oreck Buster B Classic BB-800', variants: [] },
+          { model: 'Clean Obsessed Commercial CO711', variants: [] },
+          { model: 'Sonic Power MiniVac', variants: [] },
+        ],
+      },
+    ],
+  }, 
 }
 
 export default function BrandDetail({ params }: { params: { slug: string } }) {
