@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { productImageByModel } from '../productImages' 
 
 type Product = {
   model: string
@@ -218,9 +219,14 @@ export default function BrandDetail({ params }: { params: { slug: string } }) {
           <div className="space-y-3">
             {cat.products.map((p, i) => (
               <div key={i} className="border rounded p-4 flex gap-3">
-                <div className="flex-shrink-0 text-navy bg-gray-50 rounded p-2 h-fit">
-                  <CategoryIcon category={cat.category} />
-                </div>
+  <div className="flex-shrink-0 w-16 h-16 bg-gray-50 rounded overflow-hidden flex items-center justify-center">
+    {productImageByModel[p.model] ? (
+      <img src={productImageByModel[p.model]} alt={p.model} className="w-full h-full object-contain" />
+    ) : (
+      <CategoryIcon category={cat.category} />
+    )}
+  </div> 
+
                 <div>
                   <p className="font-semibold">{p.model}</p>
                   {p.variants.length > 0 && (
