@@ -50,10 +50,13 @@ export default function Home() {
       <section className="px-4 py-6 bg-gray-50">
         <h3 className="text-2xl font-bold text-center mb-4">Featured Brands</h3>
         <div className="grid grid-cols-2 gap-3">
-          {brands.map((b) => (
-            <div key={b} className="bg-white border rounded p-4 text-center font-semibold">{b}</div>
-          ))}
-        </div>
+  {brands.map((b) => (
+    <Link key={b.slug} href={`/brands/${b.slug}`} className="bg-white border rounded p-4 text-center font-semibold">
+      {b.name}
+    </Link>
+  ))}
+</div> 
+
       </section>
 
       {/* Why buy local */}
