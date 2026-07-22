@@ -112,7 +112,8 @@ const brands: Record<string, Brand> = {
         ],
       },
     ],
-  }, 
+  },
+}
 
 export default function BrandDetail({ params }: { params: { slug: string } }) {
   const brand = brands[params.slug]
