@@ -9,7 +9,7 @@ const brands = [
   { slug: 'riccar', name: 'Riccar', tagline: 'World-class clean' },
   { slug: 'oreck', name: 'Oreck, Simplicity & More', tagline: 'Lightweight & specialty vacuums' },
   { slug: 'handheld', name: 'Handheld Vacuums', tagline: 'Quick cleanups & spot cleaning' },
-  { slug: 'maison berger', name: 'Maison Berger', tagline: 'Scented air purification' },
+  { slug: 'maison-berger', name: 'Maison Berger', tagline: 'Scented air purification' },
 ]
 
 export default function Brands() {
