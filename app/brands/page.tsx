@@ -7,8 +7,8 @@ const brands = [
   { slug: 'miele', name: 'Miele', tagline: 'Premium canisters & cordless' },
   { slug: 'sebo', name: 'Sebo', tagline: 'Uprights & canisters' },
   { slug: 'riccar', name: 'Riccar', tagline: 'World-class clean' },
-  { slug: 'oreck', name: 'Oreck', tagline: 'Lightweight uprights' },
-  { slug: 'simplicity', name: 'Simplicity', tagline: 'Bagged uprights' },
+  { slug: 'oreck', name: 'Oreck, Simplicity & More', tagline: 'Lightweight & specialty vacuums' },
+  { slug: 'handheld', name: 'Handheld Vacuums', tagline: 'Quick cleanups & spot cleaning' },
 ]
 
 export default function Brands() {
