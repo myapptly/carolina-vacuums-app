@@ -1,5 +1,17 @@
+'use client'
 import Link from 'next/link'
 import logo from '../carolina vacs logo.png'
+
+function shareApp() {
+  const url = 'https://carolina-vacuums-app.vercel.app'
+  if (navigator.share) {
+    navigator.share({ title: 'Carolina Vacuums & More', url })
+  } else {
+    navigator.clipboard.writeText(url)
+    alert('Link copied!')
+  }
+} 
+
 
 const stores = [
   { name: 'Winston-Salem, NC', phone: '336-768-6068', email: 'carolinavacs02@gmail.com', note: 'Original store — open since 1995' },
@@ -24,7 +36,10 @@ export default function Home() {
     <main>
       {/* Header */}
       <header className="bg-navy text-white px-4 py-4 flex items-center justify-between">
-      <img src={logo.src} alt="Carolina Vacuums & More" className="h-36" />    
+      <img src={logo.src} alt="Carolina Vacuums & More" className="h-36" />
+<button onClick={shareApp} className="text-white text-sm border border-white rounded px-3 py-1">
+  Share
+</button>     
       </header>
 
       {/* Hero */}
