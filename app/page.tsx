@@ -23,8 +23,8 @@ const stores = [
 ]
 
 const brands = [
-  { name: 'Miele', slug: 'miele' },
   { name: 'Sebo', slug: 'sebo' },
+  { name: 'Miele', slug: 'miele' },
   { name: 'Riccar', slug: 'riccar' },
   { name: 'Oreck, Simplicity & More', slug: 'oreck' },
   { name: 'Handheld Vacuums', slug: 'handheld' },
