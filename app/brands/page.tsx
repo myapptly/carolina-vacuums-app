@@ -20,7 +20,7 @@ export default function Brands() {
   )
 
   return (
-    <main className="px-4 py-6">
+    <main className="max-w-2xl mx-auto px-4 py-6">
       <Link href="/" className="text-navy mb-4 inline-block">&lsaquo; Back</Link>
       <h2 className="text-2xl font-bold mb-4">Shop by Brand</h2>
 
