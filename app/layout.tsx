@@ -1,13 +1,13 @@
 import type { Metadata, Viewport } from 'next'
-import './globals.css'
+import icon from'./icon1.png'
 
 export const metadata: Metadata = {
   title: 'Carolina Vacuums & More',
   description: 'Serving the Carolinas since 1995 — vacuum sales, service, and repair.',
   icons: {
-    icon: './icon1.png',
-    shortcut: './icon1.png',
-    apple: './icon1.png',
+    icon: icon.src',
+    shortcut: icon.src',
+    apple: icon.src',
   },
 }
 
