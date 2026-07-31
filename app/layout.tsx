@@ -5,9 +5,9 @@ export const metadata: Metadata = {
   title: 'Carolina Vacuums & More',
   description: 'Serving the Carolinas since 1995 — vacuum sales, service, and repair.',
   icons: {
-    icon: icon.src',
-    shortcut: icon.src',
-    apple: icon.src',
+    icon: icon.src,
+    shortcut: icon.src,
+    apple: icon.src,
   },
 }
 
