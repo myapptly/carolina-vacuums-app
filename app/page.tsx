@@ -36,7 +36,11 @@ export default function Home() {
     <main>
       {/* Header */}
       <header className="bg-navy text-white px-4 py-4 flex items-center justify-between">
-      <img src={logo.src} alt="Carolina Vacuums & More" className="h-8 w-auto object-contain" />
+      <img 
+        src={logo.src} 
+        alt="Carolina Vacuums & More"
+        style={{ width: '180px', height: 'auto' }}
+        />
 <button onClick={shareApp} className="text-white text-sm border border-white rounded px-3 py-1">
   Share
 </button>     
