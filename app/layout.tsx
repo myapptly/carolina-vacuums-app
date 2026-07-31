@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import icon from'./icon1.png'
+import icon from'./icon2.png'
 
 export const metadata: Metadata = {
   title: 'Carolina Vacuums & More',
