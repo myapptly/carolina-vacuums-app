@@ -4,6 +4,11 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Carolina Vacuums & More',
   description: 'Serving the Carolinas since 1995 — vacuum sales, service, and repair.',
+  icons: {
+    icon: './icon1.png',
+    shortcut: './icon1.png',
+    apple: './icon1.png',
+  },
 }
 
 export const viewport: Viewport = {
