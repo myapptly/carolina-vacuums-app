@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import logo from '../carolina vacs logo.png'
+import logo from './icon1.png'
 
 function shareApp() {
   const url = 'https://carolina-vacuums-app.vercel.app'
