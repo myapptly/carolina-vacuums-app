@@ -4,11 +4,11 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 const brands = [
-  import seboLogo from '../sebo.png'
-import mieleLogo from '../miele.png'
-import riccarLogo from '../riccar.png'
-import oreckLogo from '../oreck.png'
-import maisonLogo from '../maison.png'
+  import sebo from '../sebo.png'
+import miele from '../miele.png'
+import riccar from '../riccar.png'
+import oreck from '../oreck.png'
+import maison from '../maison.png'
 ]
 export default function Brands() {
   const [query, setQuery] = useState('')
