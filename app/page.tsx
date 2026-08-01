@@ -12,7 +12,6 @@ function shareApp() {
   }
 } 
 
-
 const stores = [
   { name: 'Winston-Salem, NC', phone: '336-768-6068', email: 'carolinavacs02@gmail.com', note: 'Original store — open since 1995' },
   { name: 'Charlotte, NC', phone: '704-341-9700', email: 'carolinavacs04@gmail.com' },
@@ -36,14 +35,14 @@ export default function Home() {
     <main>
       {/* Header */}
       <header className="bg-navy text-white px-4 py-4 flex items-center justify-between">
-      <img 
-        src={logo.src} 
-        alt="Carolina Vacuums & More"
-        style={{ width: '180px', height: 'auto' }}
+        <img 
+          src={logo.src} 
+          alt="Carolina Vacuums & More"
+          style={{ width: '180px', height: 'auto' }}
         />
-<button onClick={shareApp} className="text-white text-sm border border-white rounded px-3 py-1">
-  Share
-</button>     
+        <button onClick={shareApp} className="text-white text-sm border border-white rounded px-3 py-1">
+          Share
+        </button>     
       </header>
 
       {/* Hero */}
@@ -70,26 +69,61 @@ export default function Home() {
       <section className="px-4 py-6 bg-gray-50">
         <h3 className="text-2xl font-bold text-center mb-4">Featured Brands</h3>
         <div className="grid grid-cols-2 gap-3">
-  {brands.map((b) => (
-    <Link key={b.slug} href={`/brands/${b.slug}`} className="bg-white border rounded p-4 text-center font-semibold">
-      {b.name}
-    </Link>
-  ))}
-</div> 
-
+          {brands.map((b) => (
+            <Link key={b.slug} href={`/brands/${b.slug}`} className="bg-white border rounded p-4 text-center font-semibold">
+              {b.name}
+            </Link>
+          ))}
+        </div> 
       </section>
 
-      {/* Why buy local */}
-      <section className="px-4 py-6">
-        <h3 className="text-2xl font-bold text-navy mb-2">Why Buy Local</h3>
-        <p className="text-gray-700 mb-4">
-          Our stores are family owned and operated, with the first location opened in Winston-Salem, NC in 1995. We guarantee the best price and service what we sell — no need to box and ship for repairs or warranty work.
+      {/* Why Buy Local / About Section */}
+      <section className="px-4 py-8 space-y-6">
+        <h3 className="text-2xl font-bold text-navy text-center">Why Buy Local</h3>
+
+        <div>
+          <h4 className="font-bold text-vacgreen text-lg mb-1">Our sales staff is professional, knowledgeable and ready to help you find the best products for your home business!</h4>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            You can depend on us to provide the best and most professional service in our industry. Carolina Vacuums & More has the solution to all your cleaning needs. Plus, we are only a phone call away should you need assistance! We fully assemble each product and provide you with the information you need to use the products properly.
+          </p>
+        </div>
+
+        <div>
+          <h4 className="font-bold text-vacgreen text-lg mb-1">We offer a complete selection of quality Miele, Sebo, Riccar, Simplicity & Oreck vacuums!</h4>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            We carry the full line of Miele, Sebo, Riccar, Simplicity & Oreck products designed to make your cleaning easy. We also carry Boneo Air purifiers from Switzerland, the Amazing Nellie&apos;s WOW Mop the best cleaning products you have ever used!
+          </p>
+        </div>
+
+        <div>
+          <h4 className="font-bold text-vacgreen text-lg mb-1">We service what we sell!</h4>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            Oreck has the best warranties and free annual service programs available! Our highly trained service technicians will help keep your Miele, Sebo, Riccar, Simplicity & Oreck products in top working condition. No need to box and ship items for service or warranty claims. Our service is prompt, professional and fully guaranteed.
+          </p>
+        </div>
+
+        <div>
+          <h4 className="font-bold text-vacgreen text-lg mb-1">We are locally owned and operated!</h4>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            Our Carolina Vacuums & More stores in North and South Carolina are family owned and operated. The first store opened in Winston-Salem, NC in 1995. The owners are lifelong North Carolina residents. They take pride in offering the best selection, the best price and the best service in the industry.
+          </p>
+        </div>
+
+        <div>
+          <h4 className="font-bold text-vacgreen text-lg mb-1">We guarantee the best price!</h4>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            We match all Miele, Sebo, Riccar, Simplicity & Oreck offers. If you see a price or offer that you feel is better than ours, we ask that you check with us as we guarantee that no one will beat our prices. Buy from us with confidence that you are getting the best price — we guarantee it.
+          </p>
+        </div>
+
+        <p className="text-gray-800 font-semibold text-center pt-2">
+          We appreciate your support and look forward to helping with your home care needs!
         </p>
       </section>
 
       {/* Locations */}
       <section className="bg-navy text-white px-4 py-8">
-        <h3 className="text-2xl font-bold text-center mb-6">Visit Any of Our 6 Locations!</h3>
+        <h3 className="text-2xl font-bold text-center mb-6">Visit Any of Our Locations!</h3>
         <div className="space-y-6">
           {stores.map((s) => (
             <div key={s.name} className="text-center">
@@ -107,4 +141,4 @@ export default function Home() {
       </footer>
     </main>
   )
-} 
+}
