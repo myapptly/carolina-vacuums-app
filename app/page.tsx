@@ -4,12 +4,11 @@ import Link from 'next/link'
 import logo from './icon2.png'
 
 // Import your brand logos here (make sure the filenames match what you saved)
-import seboLogo from './sebo.png'
-import mieleLogo from './miele.png'
-import riccarLogo from './riccar.png'
-import oreckLogo from './oreck.png'
-import simplicityLogo from './simplicity.png'
-import maisonLogo from './maison.png'
+import sebo from './sebo.png'
+import miele from './miele.png'
+import riccar from './riccar.png'
+import oreck from './oreck.png'
+import maison from './maison.png'
 
 function shareApp() {
   const url = 'https://carolina-vacuums-app.vercel.app'
