@@ -4,12 +4,12 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 const brands = [
-  { slug: 'sebo', name: 'Sebo', tagline: 'Uprights & canisters' },
-  { slug: 'miele', name: 'Miele', tagline: 'Premium canisters & cordless' },
-  { slug: 'riccar', name: 'Riccar', tagline: 'World-class clean' },
-  { slug: 'oreck', name: 'Oreck, Simplicity & More', tagline: 'Lightweight & specialty vacuums' },
-  { slug: 'handheld', name: 'Handheld Vacuums', tagline: 'Quick cleanups & spot cleaning' },
-  { slug: 'maison-berger', name: 'Maison Berger', tagline: 'Scented air purification' },
+  { name: 'Sebo', slug: 'sebo', image: seboLogo },
+  { name: 'Miele', slug: 'miele', image: mieleLogo },
+  { name: 'Riccar', slug: 'riccar', image: riccarLogo },
+  { name: 'Simplicity', slug: 'simplicity', image: simplicityLogo },
+  { name: 'Oreck', slug: 'oreck', image: oreckLogo },
+  { name: 'Maison Berger', slug: 'maison-berger', image: maisonLogo },
 ]
 export default function Brands() {
   const [query, setQuery] = useState('')
