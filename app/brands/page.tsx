@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 const brands = [
-  import sebo from '../sebo.png'
+import sebo from '../sebo.png'
 import miele from '../miele.png'
 import riccar from '../riccar.png'
 import oreck from '../oreck.png'
