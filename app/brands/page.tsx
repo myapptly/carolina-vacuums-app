@@ -4,11 +4,11 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 const brands = [
-  { name: 'Sebo', slug: 'sebo', image: sebo.png },
-  { name: 'Miele', slug: 'miele', image: miele.png },
-  { name: 'Riccar', slug: 'riccar', image: riccar.png },
-  { name: 'Oreck', slug: 'oreck', image: oreck.png },
-  { name: 'Maison Berger', slug: 'maison-berger', image: maison.png },
+  import seboLogo from '../sebo.png'
+import mieleLogo from '../miele.png'
+import riccarLogo from '../riccar.png'
+import oreckLogo from '../oreck.png'
+import maisonLogo from '../maison.png'
 ]
 export default function Brands() {
   const [query, setQuery] = useState('')
