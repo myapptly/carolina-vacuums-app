@@ -9,8 +9,8 @@ import oreck from '../oreck.png'
 import maison from '../maison.png'
 
 const brands = [
-  { slug: 'miele', name: 'Miele', image: miele, tagline: 'Premium canisters & cordless' },
   { slug: 'sebo', name: 'Sebo', image: sebo, tagline: 'Uprights & canisters' },
+  { slug: 'miele', name: 'Miele', image: miele, tagline: 'Premium canisters & cordless' },
   { slug: 'riccar', name: 'Riccar', image: riccar, tagline: 'World-class clean' },
   { slug: 'oreck', name: 'Oreck', image: oreck, tagline: 'Lightweight & specialty vacuums' },
   { slug: 'maison-berger', name: 'Maison Berger', image: maison, tagline: 'Scented purification' },
