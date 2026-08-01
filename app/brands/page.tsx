@@ -31,26 +31,25 @@ export default function Brands() {
         className="w-full border rounded px-3 py-2 mb-6"
       />
 
-      <h3 className="font-semibold text-lg mb-3">Featured Brands</h3>
-      <div className="space-y-3">
-        {filtered.map((b) => (
-          <Link
-            key={b.slug}
-            href={`/brands/${b.slug}`}
-            className="border rounded p-4 flex items-center justify-between"
-          >
-            <div>
-              <p className="font-bold">{b.name}</p>
-              <p className="text-sm text-gray-500">{b.tagline}</p>
-            </div>
-            <span className="text-navy text-xl">&rsaquo;</span>
-          </Link>
-        ))}
-        {filtered.length === 0 && (
-          <p className="text-gray-500 text-center py-6">No brands match "{query}"</p>
-        )}
-      </div>
-
+      {/* Featured brands */}
+<section className="px-4 py-6 bg-gray-50">
+  <h3 className="text-2xl font-bold text-center mb-4">Featured Brands</h3>
+  <div className="grid grid-cols-2 gap-3">
+    {brands.map((b) => (
+      <Link 
+        key={b.slug} 
+        href={`/brands/${b.slug}`} 
+        className="bg-white border rounded p-4 flex items-center justify-center h-24 shadow-sm"
+      >
+        <img 
+          src={b.image.src} 
+          alt={b.name} 
+          className="max-h-14 max-w-full object-contain" 
+        />
+      </Link>
+    ))}
+  </div> 
+</section>
       <p className="text-sm text-gray-500 mt-6 text-center">
         Browsing all 1M+ items? Full catalog search coming in a later update — for now, tap a brand above or use Search.
       </p>
