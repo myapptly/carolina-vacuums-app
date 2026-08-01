@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import icon from'./icon2.png'
+import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Carolina Vacuums & More',
