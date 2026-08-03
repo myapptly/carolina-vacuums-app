@@ -58,7 +58,6 @@ export default function Home() {
         <p className="uppercase tracking-wide text-sm mb-2">Serving the Carolinas</p>
         <h2 className="text-3xl font-bold mb-4">Discover the Difference!</h2>
         <ul className="text-sm space-y-1 mb-4">
-          <li>Try it FREE before you buy it</li>
           <li>30-day in-home trial</li>
           <li>Expert in-store service department</li>
           <li>Free annual inspection</li>
