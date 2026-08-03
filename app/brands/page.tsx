@@ -46,14 +46,17 @@ export default function Brands() {
             <Link 
               key={b.slug} 
               href={`/brands/${b.slug}`} 
-              className="bg-white border rounded p-2 flex flex-col items-center justify-center h-36 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white border rounded p-4 flex items-center justify-center h-32 shadow-sm hover:shadow-md transition-shadow"
             >
-              <Image 
-                src={b.image} 
-                alt={b.name} 
-                className="h-20 w-auto object-contain max-w-[90%] mb-2" 
-              />
-              <span className="text-xs text-gray-500 font-medium text-center">{b.name}</span>
+              {b.image ? (
+                <Image 
+                  src={b.image} 
+                  alt={b.name} 
+                  className="max-h-24 w-auto object-contain max-w-[90%]" 
+                />
+              ) : (
+                <span className="text-sm font-semibold text-gray-700 text-center">{b.name}</span>
+              )}
             </Link>
           ))}
         </div> 
