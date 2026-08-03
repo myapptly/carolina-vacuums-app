@@ -77,17 +77,20 @@ export default function Home() {
       <section className="px-4 py-6 bg-gray-50 rounded-lg">
         <h3 className="text-2xl font-bold text-center mb-4">Featured Brands</h3>
         <div className="grid grid-cols-2 gap-3">
-          {filtered.map((b) => (
+          {/* Change 'filtered.map' to 'brands.map' here: */}
+          {brands.map((b) => (
             <Link 
               key={b.slug} 
               href={`/brands/${b.slug}`} 
               className="bg-white border rounded p-2 flex flex-col items-center justify-center h-36 shadow-sm hover:shadow-md transition-shadow"
             >
-              <Image 
-                src={b.image} 
-                alt={b.name} 
-                className="h-20 w-auto object-contain max-w-[90%] mb-2" 
-              />
+              {b.logo ? (
+                <img 
+                  src={b.logo} 
+                  alt={b.name} 
+                  className="h-20 w-auto object-contain max-w-[90%] mx-auto mb-2" 
+                />
+              ) : null}
               <span className="text-xs text-gray-500 font-medium text-center">{b.name}</span>
             </Link>
           ))}
