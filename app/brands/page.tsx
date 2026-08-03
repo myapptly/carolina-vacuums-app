@@ -42,15 +42,15 @@ export default function Brands() {
       <section className="px-4 py-6 bg-gray-50 rounded-lg">
         <h3 className="text-2xl font-bold text-center mb-4">Featured Brands</h3>
         <div className="grid grid-cols-2 gap-3">
-          {filtered.map((b) => (
+          {brands.map((b) => (
             <Link 
               key={b.slug} 
               href={`/brands/${b.slug}`} 
               className="bg-white border rounded p-4 flex items-center justify-center h-32 shadow-sm hover:shadow-md transition-shadow"
             >
-              {b.image ? (
-                <Image 
-                  src={b.image} 
+              {b.logo ? (
+                <img 
+                  src={b.logo} 
                   alt={b.name} 
                   className="max-h-24 w-auto object-contain max-w-[90%]" 
                 />
