@@ -110,7 +110,7 @@ export default function Home() {
         <div>
           <h4 className="font-bold text-vacgreen text-lg mb-1">We offer a complete selection of quality Miele, Sebo, Riccar, Simplicity & Oreck vacuums!</h4>
           <p className="text-gray-700 text-sm leading-relaxed">
-            We carry the full line of Miele, Sebo, Riccar, Simplicity & Oreck products designed to make your cleaning easy. We also carry Boneo Air purifiers from Switzerland, the Amazing Nellie&apos;s WOW Mop the best cleaning products you have ever used!
+            We carry the full line of Miele, Sebo, Riccar, Simplicity & Oreck products designed to make your cleaning easy. We also carry Maison-Berger Home Fragrance from France, Ideal Air Purifiers from Germany, the Amazing Nellie&apos;s WOW Mop and the very best Carolina Clean cleaning products you have ever used!
           </p>
         </div>
 
