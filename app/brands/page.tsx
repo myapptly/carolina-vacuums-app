@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { useState } from 'react'
 
 import sebo from '../sebo.png'
@@ -38,19 +37,19 @@ export default function Brands() {
         className="w-full border rounded px-3 py-2 mb-6"
       />
 
-{/* Featured brands */}
+      {/* Featured brands */}
       <section className="px-4 py-6 bg-gray-50 rounded-lg">
         <h3 className="text-2xl font-bold text-center mb-4">Featured Brands</h3>
         <div className="grid grid-cols-2 gap-3">
-          {brands.map((b) => (
+          {filtered.map((b) => (
             <Link 
               key={b.slug} 
               href={`/brands/${b.slug}`} 
               className="bg-white border rounded p-4 flex items-center justify-center h-32 shadow-sm hover:shadow-md transition-shadow"
             >
-              {b.logo ? (
+              {b.image ? (
                 <img 
-                  src={b.logo} 
+                  src={b.image.src} 
                   alt={b.name} 
                   className="max-h-24 w-auto object-contain max-w-[90%]" 
                 />
