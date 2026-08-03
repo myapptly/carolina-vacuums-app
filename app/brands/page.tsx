@@ -1,7 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
+
 import sebo from '../sebo.png'
 import miele from '../miele.png'
 import riccar from '../riccar.png'
@@ -37,27 +39,29 @@ export default function Brands() {
       />
 
       {/* Featured brands */}
-<section className="px-4 py-6 bg-gray-50">
-  <h3 className="text-2xl font-bold text-center mb-4">Featured Brands</h3>
-  <div className="grid grid-cols-2 gap-3">
-    {brands.map((b) => (
-      <Link 
-        key={b.slug} 
-        href={`/brands/${b.slug}`} 
-        className="bg-white border rounded p-4 flex items-center justify-center h-24 shadow-sm"
-      >
-        <img 
-          src={b.image.src} 
-          alt={b.name} 
-          className="max-h-14 max-w-full object-contain" 
-        />
-      </Link>
-    ))}
-  </div> 
-</section>
+      <section className="px-4 py-6 bg-gray-50 rounded-lg">
+        <h3 className="text-2xl font-bold text-center mb-4">Featured Brands</h3>
+        <div className="grid grid-cols-2 gap-3">
+          {filtered.map((b) => (
+            <Link 
+              key={b.slug} 
+              href={`/brands/${b.slug}`} 
+              className="bg-white border rounded p-4 flex flex-col items-center justify-center h-28 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <Image 
+                src={b.image} 
+                alt={b.name} 
+                className="max-h-14 w-auto object-contain mb-1" 
+              />
+              <span className="text-xs text-gray-500 font-medium">{b.name}</span>
+            </Link>
+          ))}
+        </div> 
+      </section>
+
       <p className="text-sm text-gray-500 mt-6 text-center">
         Browsing all 1M+ items? Full catalog search coming in a later update — for now, tap a brand above or use Search.
       </p>
     </main>
   )
-} 
+}
