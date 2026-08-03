@@ -117,14 +117,14 @@ export default function Home() {
         <div>
           <h4 className="font-bold text-vacgreen text-lg mb-1">We service what we sell!</h4>
           <p className="text-gray-700 text-sm leading-relaxed">
-            Oreck has the best warranties and free annual service programs available! Our highly trained service technicians will help keep your Miele, Sebo, Riccar, Simplicity & Oreck products in top working condition. No need to box and ship items for service or warranty claims. Our service is prompt, professional and fully guaranteed.
+            Our products carry the best warranties in the industry and some come with free annual service plans. Our highly trained service technicians will help keep all of your products in top working condition for years to come. No need to box and ship items for service or warranty claims. Our service is prompt, professional and fully guaranteed.
           </p>
         </div>
 
         <div>
           <h4 className="font-bold text-vacgreen text-lg mb-1">We are locally owned and operated!</h4>
           <p className="text-gray-700 text-sm leading-relaxed">
-            Our Carolina Vacuums & More stores in North and South Carolina are family owned and operated. The first store opened in Winston-Salem, NC in 1995. The owners are lifelong North Carolina residents. They take pride in offering the best selection, the best price and the best service in the industry.
+            Our Carolina Vacuums & More stores in North and South Carolina are family owned and operated. The first store opened in Winston-Salem, NC in 1995. The owners are lifelong North Carolina residents who take pride in offering the best selection, the best price and the best service in the industry.
           </p>
         </div>
 
