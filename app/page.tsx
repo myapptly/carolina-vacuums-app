@@ -1,9 +1,8 @@
 'use client'
-'use client'
 import Link from 'next/link'
 import logo from './icon2.png'
 
-// Import your brand logos here (make sure the filenames match what you saved)
+// Import brand logos
 import sebo from './sebo.png'
 import miele from './miele.png'
 import riccar from './riccar.png'
@@ -29,13 +28,14 @@ const stores = [
   { name: 'Raleigh, NC', phone: '919-484-2288', email: 'carolinavacs15@gmail.com' },
 ]
 
+// Map the imported image files into the brands array
 const brands = [
-  { name: 'Sebo', slug: 'sebo' },
-  { name: 'Miele', slug: 'miele' },
-  { name: 'Riccar', slug: 'riccar' },
-  { name: 'Oreck, Simplicity & More', slug: 'oreck' },
-  { name: 'Handheld Vacuums', slug: 'handheld' },
-  { name: 'Maison Berger', slug: 'maison-berger' },
+  { name: 'Sebo', slug: 'sebo', logo: sebo.src },
+  { name: 'Miele', slug: 'miele', logo: miele.src },
+  { name: 'Riccar', slug: 'riccar', logo: riccar.src },
+  { name: 'Oreck, Simplicity & More', slug: 'oreck', logo: oreck.src },
+  { name: 'Handheld Vacuums', slug: 'handheld', logo: null },
+  { name: 'Maison Berger', slug: 'maison-berger', logo: maison.src },
 ]
 
 export default function Home() {
@@ -78,8 +78,19 @@ export default function Home() {
         <h3 className="text-2xl font-bold text-center mb-4">Featured Brands</h3>
         <div className="grid grid-cols-2 gap-3">
           {brands.map((b) => (
-            <Link key={b.slug} href={`/brands/${b.slug}`} className="bg-white border rounded p-4 text-center font-semibold">
-              {b.name}
+            <Link 
+              key={b.slug} 
+              href={`/brands/${b.slug}`} 
+              className="bg-white border rounded p-4 flex flex-col items-center justify-center text-center font-semibold hover:shadow-md transition-shadow"
+            >
+              {b.logo ? (
+                <img 
+                  src={b.logo} 
+                  alt={b.name} 
+                  className="h-12 w-auto object-contain mb-2" 
+                />
+              ) : null}
+              <span>{b.name}</span>
             </Link>
           ))}
         </div> 
