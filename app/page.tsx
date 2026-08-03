@@ -110,14 +110,14 @@ export default function Home() {
         <div>
           <h4 className="font-bold text-vacgreen text-lg mb-1">We offer a complete selection of quality Miele, Sebo, Riccar, Simplicity & Oreck vacuums!</h4>
           <p className="text-gray-700 text-sm leading-relaxed">
-            We carry the full line of Miele, Sebo, Riccar, Simplicity & Oreck products designed to make your cleaning easy. We also carry Boneo Air purifiers from Switzerland, the Amazing Nellie&apos;s WOW Mop the best cleaning products you have ever used!
+            We carry the full line of Miele, Sebo, Riccar, Simplicity & Oreck products designed to make your cleaning easy. We also carry Ideal Air purifiers from Germany, the Amazing Nellie&apos;s WOW Mop the best cleaning products you have ever used!
           </p>
         </div>
 
         <div>
           <h4 className="font-bold text-vacgreen text-lg mb-1">We service what we sell!</h4>
           <p className="text-gray-700 text-sm leading-relaxed">
-            Oreck has the best warranties and free annual service programs available! Our highly trained service technicians will help keep your Miele, Sebo, Riccar, Simplicity & Oreck products in top working condition. No need to box and ship items for service or warranty claims. Our service is prompt, professional and fully guaranteed.
+            All of our products have the best warranties available and some come with free annual service programs! Our highly trained service technicians will help keep your products in top working condition for years to come. No need to box and ship items for service or warranty claims. Our service is prompt, professional and fully guaranteed.
           </p>
         </div>
 
