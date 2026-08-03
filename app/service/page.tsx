@@ -36,7 +36,7 @@ export default function Service() {
       <Link href="/" className="text-navy mb-4 inline-block">&lsaquo; Back</Link>
       <h2 className="text-2xl font-bold mb-2">Request Service</h2>
       <p className="text-gray-600 mb-6">
-        Tell us a bit about your vacuum and the store you'd like to visit. We'll follow up to schedule a drop-off — most repairs are handled same day.
+        Tell us a bit about your vacuum and the store you'd like to visit. We'll follow up to schedule a drop-off — some repairs can be handled the same day.
       </p>
 
       <form className="space-y-4" onSubmit={handleSubmit}>
