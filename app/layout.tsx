@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import icon from'./icon2.png'
+import icon from'./iconcv.png'
 import './globals.css'
 
 export const metadata: Metadata = {
