@@ -14,6 +14,7 @@ export default function manifest(): MetadataRoute.Manifest {
         src: '/iconcv.png',
         sizes: '512x512',
         type: 'image/png',
+        purpose: 'any maskable',
       },
     ],
   }
