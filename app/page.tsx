@@ -1,162 +1,1665 @@
 'use client'
-import Link from 'next/link'
-import logo from './icon2.png'
 
-// Import brand logos
+import Image from 'next/image'
+
+import logo from './iconcv.png'
 import sebo from './sebo.png'
 import miele from './miele.png'
 import riccar from './riccar.png'
-import oreck from './oreck.png'
-import maison from './maison.png'
+
+const site = 'https://www.carolinavacuums.com'
 
 function shareApp() {
   const url = 'https://carolina-vacuums-app.vercel.app'
+
   if (navigator.share) {
-    navigator.share({ title: 'Carolina Vacuums & More', url })
+    navigator.share({
+      title: 'Carolina Vacuums & More',
+      url,
+    })
   } else {
     navigator.clipboard.writeText(url)
     alert('Link copied!')
   }
-} 
-
-const stores = [
-  { name: 'Winston-Salem, NC', phone: '336-768-6068', email: 'carolinavacs02@gmail.com', note: 'Original store — open since 1995' },
-  { name: 'Charlotte, NC', phone: '704-341-9700', email: 'carolinavacs04@gmail.com' },
-  { name: 'Concord, NC', phone: '704-910-4634', email: 'carolinavacs05@gmail.com' },
-  { name: 'Greenville, SC', phone: '864-286-6505', email: 'carolinavacs09@gmail.com' },
-  { name: 'Mooresville, NC', phone: '704-660-0556', email: 'carolinavacs12@gmail.com' },
-  { name: 'Raleigh, NC', phone: '919-484-2288', email: 'carolinavacs15@gmail.com' },
-]
-
-const brands = [
-  { name: 'Sebo', slug: 'sebo', logo: sebo.src },
-  { name: 'Miele', slug: 'miele', logo: miele.src },
-  { name: 'Riccar', slug: 'riccar', logo: riccar.src },
-  { name: 'Oreck, Simplicity & More', slug: 'oreck', logo: oreck.src },
-  { name: 'Handheld Vacuums', slug: 'handheld', logo: null },
-  { name: 'Maison Berger', slug: 'maison-berger', logo: maison.src },
-]
+}
 
 export default function Home() {
   return (
-    <main>
-      {/* Header */}
-      <header className="bg-navy text-white px-4 py-4 flex items-center justify-between">
-        <img 
-          src={logo.src} 
-          alt="Carolina Vacuums & More"
-          style={{ width: '180px', height: 'auto' }}
-        />
-        <button onClick={shareApp} className="text-white text-sm border border-white rounded px-3 py-1">
-          Share
-        </button>     
+    <main className="page">
+
+      {/* TOP NAVIGATION */}
+      <header className="topBar">
+        <nav className="topNav">
+          <a href={site}>Home</a>
+          <a href={`${site}/flyers`}>Promotions</a>
+          <a href={`${site}/review-showcase`}>Reviews</a>
+          <a href={`${site}/email-savings`}>Email Savings</a>
+          <a href={`${site}/synchrony-financing`}>Financing</a>
+          <a href={`${site}/brands`}>Shop By Brand</a>
+        </nav>
       </header>
 
-      {/* Hero */}
-      <section className="bg-vacgreen text-white text-center px-4 py-6">
-        <p className="uppercase tracking-wide text-sm mb-2">Serving the Carolinas</p>
-        <h2 className="text-3xl font-bold mb-4">Discover the Difference!</h2>
-        <ul className="text-sm space-y-1 mb-4">
-          <li>30-day in-home trial</li>
-          <li>Expert in-store service department</li>
-          <li>Free annual inspection</li>
-        </ul>
-        <p className="font-semibold">Serving the Carolinas since 1995</p>
-      </section>
+      {/* MAIN HEADER */}
+      <section className="mainHeader">
 
-      {/* Quick actions */}
-      <section className="px-4 py-6 space-y-3">
-        <Link href="/locations" className="block bg-navy text-white text-center py-3 rounded font-semibold">Find a Location</Link>
-        <Link href="/brands" className="block bg-navy text-white text-center py-3 rounded font-semibold">Shop Our Catalog</Link>
-        <Link href="/service" className="block bg-navy text-white text-center py-3 rounded font-semibold">Request Service</Link>
-      </section>
+        <a href={site} className="searchBox">
+          <span>What can we help you find?</span>
+          <span className="searchIcon">⌕</span>
+        </a>
 
-      {/* Featured brands */}
-      <section className="px-4 py-6 bg-gray-50 rounded-lg">
-        <h3 className="text-2xl font-bold text-center mb-4">Featured Brands</h3>
-        <div className="grid grid-cols-2 gap-3">
-          {brands.map((b) => (
-            <Link 
-              key={b.slug} 
-              href={`/brands/${b.slug}`} 
-              className="bg-white border rounded p-4 flex items-center justify-center h-32 shadow-sm hover:shadow-md transition-shadow"
-            >
-              {b.logo ? (
-                <img 
-                  src={b.logo} 
-                  alt={b.name} 
-                  className="max-h-24 w-auto object-contain max-w-[90%]" 
-                />
-              ) : (
-                <span className="text-sm font-semibold text-gray-700 text-center">{b.name}</span>
-              )}
-            </Link>
-          ))}
-        </div> 
-      </section>
-
-      {/* Why Buy Local / About Section */}
-      <section className="px-4 py-8 space-y-6">
-        <h3 className="text-2xl font-bold text-navy text-center">Why Buy Local</h3>
-
-        <div>
-          <h4 className="font-bold text-vacgreen text-lg mb-1">Our sales staff is professional, knowledgeable and ready to help you find the best products for your home business!</h4>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            You can depend on us to provide the best and most professional service in our industry. Carolina Vacuums & More has the solution to all your cleaning needs. Plus, we are only a phone call away should you need assistance! We fully assemble each product and provide you with the information you need to use the products properly.
-          </p>
+        <div className="logoBox">
+          <Image
+            src={logo}
+            alt="Carolina Vacuums & More"
+            priority
+            style={{
+              width: '220px',
+              height: '105px',
+              objectFit: 'contain',
+            }}
+          />
         </div>
 
-        <div>
-          <h4 className="font-bold text-vacgreen text-lg mb-1">We offer a complete selection of quality Miele, Sebo, Riccar, Simplicity & Oreck vacuums!</h4>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            We carry the full line of Miele, Sebo, Riccar, Simplicity & Oreck products designed to make your cleaning easy. We also carry Maison-Berger Home Fragrance from France, Ideal Air Purifiers from Germany, the Amazing Nellie&apos;s WOW Mop and the very best Carolina Clean cleaning products you have ever used!
-          </p>
-        </div>
+        <div className="headerRight">
 
-        <div>
-          <h4 className="font-bold text-vacgreen text-lg mb-1">We service what we sell!</h4>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            Our products carry the best warranties in the industry and some come with free annual service plans. Our highly trained service technicians will help keep all of your products in top working condition for years to come. No need to box and ship items for service or warranty claims. Our service is prompt, professional and fully guaranteed.
-          </p>
-        </div>
+          <a href={`${site}/locations`} className="storeBlock">
+            <span className="storeIcon">▰</span>
 
-        <div>
-          <h4 className="font-bold text-vacgreen text-lg mb-1">We are locally owned and operated!</h4>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            Our Carolina Vacuums & More stores in North and South Carolina are family owned and operated. The first store opened in Winston-Salem, NC in 1995. The owners are lifelong North Carolina residents who take pride in offering the best selection, the best price and the best service in the industry.
-          </p>
-        </div>
-
-        <div>
-          <h4 className="font-bold text-vacgreen text-lg mb-1">We guarantee the best price!</h4>
-          <p className="text-gray-700 text-sm leading-relaxed">
-            We match all Miele, Sebo, Riccar, Simplicity & Oreck offers. If you see a price or offer that you feel is better than ours, we ask that you check with us as we guarantee that no one will beat our prices. Buy from us with confidence that you are getting the best price — we guarantee it.
-          </p>
-        </div>
-
-        <p className="text-gray-800 font-semibold text-center pt-2">
-          We appreciate your support and look forward to helping with your home care needs!
-        </p>
-      </section>
-
-      {/* Locations */}
-      <section className="bg-navy text-white px-4 py-8">
-        <h3 className="text-2xl font-bold text-center mb-6">Visit Any of Our Locations!</h3>
-        <div className="space-y-6">
-          {stores.map((s) => (
-            <div key={s.name} className="text-center">
-              <p className="font-bold">{s.name}</p>
-              {s.note && <p className="text-sm text-gray-300">{s.note}</p>}
-              <a href={`tel:${s.phone}`} className="block text-lg">{s.phone}</a>
-              <a href={`mailto:${s.email}`} className="block text-sm text-gray-300">{s.email}</a>
+            <div>
+              <small>My Store:</small>
+              <strong>Winston-Salem</strong>
             </div>
-          ))}
+          </a>
+
+          <div className="miniLinks">
+            <a href={site}>
+              <span>♟</span>
+              <small>Account</small>
+            </a>
+
+            <a href={site}>
+              <span>♥</span>
+              <small>Wishlist</small>
+            </a>
+
+            <a href={site}>
+              <span>🛒</span>
+              <small>Cart</small>
+            </a>
+          </div>
+
         </div>
+
       </section>
 
-      <footer className="text-center py-4 text-sm text-gray-500">
-        Carolina Vacuums &amp; More — Est. 1995
+      {/* CATEGORY NAVIGATION */}
+      <nav className="categoryNav">
+
+        <a href={`${site}/home-appliances/vacuum-cleaners`}>
+          Vacuum Cleaners
+        </a>
+
+        <a href={site}>
+          Floor Care
+        </a>
+
+        <a href={`${site}/home-air-control`}>
+          Air Care
+        </a>
+
+        <a href={site}>
+          Accessories
+        </a>
+
+        <a href={`${site}/vacuum-service-repair`}>
+          Service and Repair
+        </a>
+
+      </nav>
+
+      {/* MAIN HERO */}
+      <section className="hero">
+
+        <div className="heroTop">
+
+          <div className="heroLeft">
+
+            <h1>Serving the Carolinas since 1995</h1>
+
+            <div className="heroButtons">
+
+              <a href={`${site}/locations`}>
+                Find A Location
+              </a>
+
+              <a href={`${site}/home-appliances/vacuum-cleaners`}>
+                Shop Our Catalog
+              </a>
+
+              <a href={`${site}/vacuum-service-repair`}>
+                Service Request
+              </a>
+
+              <a href={site} className="centralVac">
+                Central Vacuums
+                <span>Sales Service</span>
+                <span>Installation</span>
+              </a>
+
+            </div>
+
+          </div>
+
+          <div className="heroRight">
+
+            <h2>Discover the Difference!</h2>
+
+            <ul>
+              <li>Try it FREE Before You Buy It</li>
+              <li>30 DAY IN-HOME TRIAL</li>
+              <li>Expert In-Store Service Department</li>
+              <li>Free Annual Inspection</li>
+              <li>Warranty Service</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+        {/* WAVY QUALITY BANNER */}
+        <div className="qualityWave">
+          <div className="waveBack" />
+          <div className="waveFront">
+            <span>QUALITY</span>
+            <b>•</b>
+            <span>SAVINGS</span>
+            <b>•</b>
+            <span>CONVENIENCE</span>
+          </div>
+        </div>
+
+      </section>
+
+      {/* FEATURED BRANDS */}
+      <section className="featuredBrands">
+
+        <h2>Featured Brands</h2>
+
+        <div className="featuredGrid">
+
+          <a href={`${site}/brands`} className="brandCard">
+            <Image
+              src={miele}
+              alt="Miele"
+              style={{
+                width: '150px',
+                height: '75px',
+                objectFit: 'contain',
+              }}
+            />
+          </a>
+
+          <a href={`${site}/brands`} className="brandCard">
+            <Image
+              src={sebo}
+              alt="SEBO"
+              style={{
+                width: '150px',
+                height: '75px',
+                objectFit: 'contain',
+              }}
+            />
+          </a>
+
+          <a href={`${site}/brands`} className="brandCard">
+            <Image
+              src={riccar}
+              alt="Riccar"
+              style={{
+                width: '150px',
+                height: '75px',
+                objectFit: 'contain',
+              }}
+            />
+          </a>
+
+        </div>
+
+      </section>
+
+      {/* SALES STRIP */}
+      <section className="salesStrip">
+        <strong>
+          Vacuum Sales & Repair in North Carolina & South Carolina
+        </strong>
+        <span>Carolina Vacuums</span>
+      </section>
+
+      {/* FEATURED PRODUCTS */}
+      <section className="products">
+
+        <h2>Featured Products</h2>
+
+        <div className="productGrid">
+
+          <a
+            href={`${site}/home-appliances/vacuum-cleaners`}
+            className="productCard"
+          >
+            <div className="productVisual">Vacuum Cleaners</div>
+            <strong>Shop Featured Vacuums</strong>
+            <span>View Products</span>
+          </a>
+
+          <a
+            href={`${site}/home-appliances/vacuum-cleaners`}
+            className="productCard"
+          >
+            <div className="productVisual">Upright</div>
+            <strong>Upright Vacuums</strong>
+            <span>View Products</span>
+          </a>
+
+          <a
+            href={`${site}/home-appliances/vacuum-cleaners`}
+            className="productCard"
+          >
+            <div className="productVisual">Canister</div>
+            <strong>Canister Vacuums</strong>
+            <span>View Products</span>
+          </a>
+
+          <a
+            href={`${site}/home-appliances/vacuum-cleaners`}
+            className="productCard"
+          >
+            <div className="productVisual">Cordless</div>
+            <strong>Cordless Vacuums</strong>
+            <span>View Products</span>
+          </a>
+
+        </div>
+
+      </section>
+
+      {/* BRAND STRIP */}
+      <section className="logoStrip">
+
+        <a href={`${site}/brands`}>
+          <Image
+            src={sebo}
+            alt="SEBO"
+            style={{
+              width: '90px',
+              height: '52px',
+              objectFit: 'contain',
+            }}
+          />
+        </a>
+
+        <a href={site} className="textLogo nellies">
+          Nellie&apos;s
+        </a>
+
+        <a href={`${site}/brands`}>
+          <Image
+            src={miele}
+            alt="Miele"
+            style={{
+              width: '90px',
+              height: '52px',
+              objectFit: 'contain',
+            }}
+          />
+        </a>
+
+        <a href={site} className="textLogo oreck">
+          ORECK
+        </a>
+
+        <a href={`${site}/brands`}>
+          <Image
+            src={riccar}
+            alt="Riccar"
+            style={{
+              width: '90px',
+              height: '52px',
+              objectFit: 'contain',
+            }}
+          />
+        </a>
+
+        <a href={site} className="textLogo simplicity">
+          SIMPLICITY
+          <br />
+          VACUUMS
+        </a>
+
+      </section>
+
+      {/* POPULAR CATEGORIES */}
+      <section className="popular">
+
+        <h2>POPULAR CATEGORIES</h2>
+
+        <a href={`${site}/locations`} className="visitLink">
+          Visit any of our 6 Locations »
+        </a>
+
+        <div className="popularGrid">
+
+          <a href={`${site}/home-appliances/vacuum-cleaners`}>
+            <div className="categoryIcon">▥</div>
+            <strong>UPRIGHT<br />VACUUMS</strong>
+            <span>View All »</span>
+          </a>
+
+          <a href={`${site}/home-appliances/vacuum-cleaners`}>
+            <div className="categoryIcon">◉</div>
+            <strong>CANISTER<br />VACUUMS</strong>
+            <span>View All »</span>
+          </a>
+
+          <a href={`${site}/home-appliances/vacuum-cleaners`}>
+            <div className="categoryIcon">⚡</div>
+            <strong>CORDLESS<br />VACUUMS</strong>
+            <span>View All »</span>
+          </a>
+
+          <a href={`${site}/home-air-control`}>
+            <div className="categoryIcon">▣</div>
+            <strong>AIR CARE</strong>
+            <span>View All »</span>
+          </a>
+
+          <a href={site}>
+            <div className="categoryIcon">⌁</div>
+            <strong>FLOOR CARE</strong>
+            <span>View All »</span>
+          </a>
+
+        </div>
+
+      </section>
+
+      {/* WHY BUY LOCAL */}
+      <section className="whyLocal">
+
+        <h2>Why Buy Local</h2>
+
+        <a href={`${site}/locations`} className="localLink">
+          Visit any of our 6 Locations »
+        </a>
+
+        <div className="whyGrid">
+
+          <div className="whyText">
+
+            <h3>
+              Our sales staff is professional, knowledgeable and ready to help
+              you find the best products for your home business!
+            </h3>
+
+            <p>
+              You can depend on us to provide the best and most professional
+              service in our industry. Carolina Vacuums & More has the solution
+              to all your cleaning needs.
+            </p>
+
+            <h3>
+              We offer a complete selection of quality Miele, Sebo, Riccar,
+              Simplicity & Oreck vacuums!
+            </h3>
+
+            <p>
+              Shop premium vacuum and home-care products from brands Carolina
+              Vacuums customers know and trust.
+            </p>
+
+            <h3>We service what we sell!</h3>
+
+            <p>
+              Highly trained service technicians help keep vacuums and cleaning
+              products in top working condition.
+            </p>
+
+            <h3>We are locally owned and operated!</h3>
+
+            <p>
+              Carolina Vacuums & More has served customers throughout the
+              Carolinas since 1995.
+            </p>
+
+            <h3>We guarantee the best price!</h3>
+
+          </div>
+
+          <div className="localCard">
+
+            <Image
+              src={logo}
+              alt="Carolina Vacuums"
+              style={{
+                width: '230px',
+                height: '150px',
+                objectFit: 'contain',
+              }}
+            />
+
+            <strong>Professional Local Service</strong>
+
+            <a href={`${site}/locations`}>
+              Visit A Store
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* WHY SHOP */}
+      <section className="whyShop">
+
+        <h2>WHY SHOP WITH US</h2>
+
+        <a href={`${site}/locations`}>
+          Visit any of our 6 Locations »
+        </a>
+
+      </section>
+
+      {/* SERVICE */}
+      <section className="serviceHero">
+
+        <Image
+          src={logo}
+          alt="Carolina Vacuums"
+          style={{
+            width: '220px',
+            height: '130px',
+            objectFit: 'contain',
+          }}
+        />
+
+        <h2>Vacuum Service, Sales & Repair</h2>
+
+        <p>
+          We can handle vacuum service questions and vacuum repair for
+          vacuum brands and models.
+        </p>
+
+        <a href={`${site}/vacuum-service-repair`}>
+          Service Request
+        </a>
+
+      </section>
+
+      {/* REVIEWS */}
+      <section className="reviews">
+
+        <div className="reviewTitle">
+          <h2>See what our customers are saying...</h2>
+
+          <a href={`${site}/review-showcase`}>
+            View More
+          </a>
+        </div>
+
+        <div className="reviewGrid">
+
+          <div>
+            <strong>Customer Review</strong>
+            <span>★★★★★</span>
+            <p>See recent customer experiences and ratings.</p>
+          </div>
+
+          <div>
+            <strong>Friendly Local Service</strong>
+            <span>★★★★★</span>
+            <p>Read what customers say about Carolina Vacuums.</p>
+          </div>
+
+          <div>
+            <strong>Professional Repair</strong>
+            <span>★★★★★</span>
+            <p>View customer feedback about service and repairs.</p>
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* LOCATIONS */}
+      <section className="locationTitle">
+
+        <h2>VISIT ANY ONE OF OUR 6 LOCATIONS!</h2>
+
+        <a href={`${site}/locations`}>
+          Find a Store »
+        </a>
+
+      </section>
+
+      <section className="locations">
+
+        <div className="locationGrid">
+
+          <div>
+            <strong>Concord, NC</strong>
+            <span>704-910-4634</span>
+            <small>carolinavacs05@gmail.com</small>
+          </div>
+
+          <div>
+            <strong>Greenville, SC</strong>
+            <span>864-286-6505</span>
+            <small>carolinavacs09@gmail.com</small>
+          </div>
+
+          <div>
+            <strong>Mooresville, NC</strong>
+            <span>704-660-0556</span>
+            <small>carolinavacs12@gmail.com</small>
+          </div>
+
+          <div>
+            <strong>Raleigh, NC</strong>
+            <span>919-484-2288</span>
+            <small>carolinavacs15@gmail.com</small>
+          </div>
+
+          <div>
+            <strong>Charlotte, NC</strong>
+            <span>704-341-9700</span>
+            <small>carolinavacs04@gmail.com</small>
+          </div>
+
+          <div>
+            <strong>Winston-Salem, NC</strong>
+            <span>336-768-6068</span>
+            <small>carolinavacs02@gmail.com</small>
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* FOOTER */}
+      <footer className="footer">
+
+        <Image
+          src={logo}
+          alt="Carolina Vacuums"
+          style={{
+            width: '180px',
+            height: '110px',
+            objectFit: 'contain',
+          }}
+        />
+
+        <p>
+          Carolina Vacuums & More
+        </p>
+
       </footer>
+
+      {/* CHEKKIT-STYLE CHAT LAUNCHER */}
+      <a
+        href={site}
+        className="chatLauncher"
+        aria-label="Chat with Carolina Vacuums"
+      >
+        <div className="chatAvatar">
+          CV
+        </div>
+
+        <div className="chatText">
+          Hi there, how can I
+          <br />
+          help you today?
+        </div>
+      </a>
+
+      <a
+        href={site}
+        className="chatBubble"
+        aria-label="Open chat"
+      >
+        ●
+      </a>
+
+      {/* APP NAVIGATION BAR */}
+      <section className="appBar">
+
+        <a href="tel:+13367686068">
+          ☎
+          <span>Call</span>
+        </a>
+
+        <a href={`${site}/locations`}>
+          📍
+          <span>Locations</span>
+        </a>
+
+        <a href={`${site}/vacuum-service-repair`}>
+          🔧
+          <span>Service</span>
+        </a>
+
+        <button onClick={shareApp}>
+          ↗
+          <span>Share</span>
+        </button>
+
+      </section>
+
+      <style jsx>{`
+
+        * {
+          box-sizing: border-box;
+        }
+
+        .page {
+          margin: 0;
+          min-height: 100vh;
+          background: #fff;
+          color: #111;
+          font-family: Arial, Helvetica, sans-serif;
+          padding-bottom: 66px;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        /* TOP BLUE BAR */
+
+        .topBar {
+          background: #073774;
+          color: white;
+        }
+
+        .topNav {
+          max-width: 1280px;
+          height: 43px;
+          margin: auto;
+          padding: 0 18px;
+          display: flex;
+          align-items: center;
+          gap: 7px;
+        }
+
+        .topNav a {
+          padding: 12px 13px;
+          font-size: 14px;
+          font-weight: 600;
+        }
+
+        .topNav a:hover {
+          background: #0d4c93;
+        }
+
+        /* COMPACT HEADER */
+
+        .mainHeader {
+          max-width: 1280px;
+          height: 116px;
+          margin: auto;
+          padding: 7px 22px;
+          display: grid;
+          grid-template-columns: 1fr 310px 1fr;
+          gap: 16px;
+          align-items: center;
+        }
+
+        .searchBox {
+          height: 55px;
+          max-width: 455px;
+          border: 1px solid #777;
+          border-radius: 5px;
+          padding: 0 18px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: #333;
+          font-size: 16px;
+        }
+
+        .searchIcon {
+          color: #073774;
+          font-size: 26px;
+          font-weight: 900;
+        }
+
+        .logoBox {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .headerRight {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          gap: 25px;
+        }
+
+        .storeBlock {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding-right: 20px;
+          border-right: 1px solid #aaa;
+        }
+
+        .storeBlock div {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .storeBlock small {
+          font-size: 12px;
+        }
+
+        .storeBlock strong {
+          font-size: 16px;
+        }
+
+        .storeIcon {
+          color: #073774;
+          font-size: 27px;
+        }
+
+        .miniLinks {
+          display: flex;
+          gap: 15px;
+        }
+
+        .miniLinks a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 3px;
+        }
+
+        .miniLinks span {
+          color: #073774;
+          font-size: 22px;
+        }
+
+        .miniLinks small {
+          font-size: 11px;
+        }
+
+        /* BLUE CATEGORY ROW */
+
+        .categoryNav {
+          height: 56px;
+          border-top: 1px solid #bfc7d1;
+          border-bottom: 1px solid #bfc7d1;
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          align-items: center;
+          background: white;
+        }
+
+        .categoryNav a {
+          text-align: center;
+          color: #06479a;
+          font-size: 16px;
+          font-weight: 800;
+        }
+
+        /* HERO */
+
+        .hero {
+          max-width: 1280px;
+          margin: 0 auto;
+          overflow: hidden;
+          background:
+            linear-gradient(
+              115deg,
+              #d7f1fb 0%,
+              #b5e4f6 45%,
+              #ccecf8 100%
+            );
+        }
+
+        .heroTop {
+          height: 270px;
+          padding: 28px 70px 8px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 55px;
+        }
+
+        .heroLeft h1 {
+          margin: 0 0 20px;
+          font-size: 30px;
+          line-height: 1.1;
+          font-weight: 900;
+          font-style: italic;
+          color: #050505;
+        }
+
+        .heroButtons {
+          max-width: 565px;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 12px;
+        }
+
+        .heroButtons a {
+          min-height: 54px;
+          border: 3px solid #0753ae;
+          border-radius: 3px;
+          background: rgba(255,255,255,.22);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          color: #063c87;
+          font-size: 14px;
+          font-weight: 700;
+          padding: 8px;
+        }
+
+        .heroButtons .centralVac {
+          grid-column: 2;
+          min-height: 95px;
+          flex-direction: column;
+          line-height: 1.35;
+        }
+
+        .centralVac span {
+          display: block;
+        }
+
+        .heroRight h2 {
+          margin: -4px 0 15px;
+          color: #c01616;
+          font-family:
+            "Brush Script MT",
+            "Segoe Script",
+            "Lucida Handwriting",
+            cursive;
+          font-size: 48px;
+          line-height: 1;
+          font-style: italic;
+          font-weight: 900;
+        }
+
+        .heroRight ul {
+          margin: 0;
+          padding-left: 27px;
+        }
+
+        .heroRight li {
+          margin: 4px 0;
+          font-size: 20px;
+          line-height: 1.16;
+          font-weight: 700;
+        }
+
+        /* WAVY QUALITY BANNER */
+
+        .qualityWave {
+          position: relative;
+          height: 112px;
+          overflow: hidden;
+        }
+
+        .waveBack {
+          position: absolute;
+          left: -4%;
+          right: -4%;
+          top: 19px;
+          height: 85px;
+          background: #91c8f1;
+          border-radius: 50% 50% 10% 10% / 36% 36% 8% 8%;
+          transform: rotate(-1deg);
+        }
+
+        .waveFront {
+          position: absolute;
+          left: -3%;
+          right: -3%;
+          top: 36px;
+          min-height: 72px;
+          padding: 17px 6%;
+          background:
+            linear-gradient(
+              180deg,
+              #78b6eb,
+              #408ed4
+            );
+          border-radius: 45% 45% 0 0 / 30% 30% 0 0;
+          transform: rotate(1deg);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 24px;
+          color: white;
+          text-shadow: 0 2px 3px rgba(0,0,0,.22);
+        }
+
+        .waveFront span {
+          font-size: clamp(25px, 3.1vw, 40px);
+          font-weight: 900;
+          letter-spacing: 4px;
+        }
+
+        .waveFront b {
+          font-size: 30px;
+        }
+
+        /* FEATURED BRANDS */
+
+        .featuredBrands {
+          max-width: 1280px;
+          margin: auto;
+          padding: 18px 30px 38px;
+          background: linear-gradient(#51a5df, #236bb4);
+          color: white;
+          text-align: center;
+        }
+
+        .featuredBrands h2 {
+          margin: 0 0 20px;
+          font-size: 28px;
+        }
+
+        .featuredGrid {
+          max-width: 820px;
+          margin: auto;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 60px;
+        }
+
+        .brandCard {
+          height: 110px;
+          border: 3px solid #333;
+          border-radius: 9px;
+          background: #eee;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        /* SALES STRIP */
+
+        .salesStrip {
+          padding: 17px;
+          text-align: center;
+          background: #20202f;
+          color: white;
+          font-size: 21px;
+        }
+
+        .salesStrip span {
+          display: block;
+          font-weight: 700;
+        }
+
+        /* PRODUCTS */
+
+        .products {
+          max-width: 1100px;
+          margin: auto;
+          padding: 35px 16px;
+          text-align: center;
+        }
+
+        .products h2 {
+          font-size: 26px;
+        }
+
+        .productGrid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 12px;
+        }
+
+        .productCard {
+          border: 1px solid #bbb;
+          padding: 12px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          text-align: left;
+        }
+
+        .productVisual {
+          height: 150px;
+          background: #f1f3f5;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .productCard > span {
+          padding: 10px;
+          background: #252538;
+          color: white;
+          text-align: center;
+        }
+
+        /* LOGO STRIP */
+
+        .logoStrip {
+          max-width: 1100px;
+          margin: auto;
+          padding: 20px;
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          gap: 12px;
+          align-items: center;
+        }
+
+        .logoStrip > a {
+          height: 65px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .textLogo {
+          font-weight: 800;
+          text-align: center;
+        }
+
+        .nellies {
+          color: #3371a7;
+          font-size: 19px;
+          font-style: italic;
+        }
+
+        .oreck {
+          font-size: 23px;
+        }
+
+        .simplicity {
+          font-size: 12px;
+          font-weight: 500;
+        }
+
+        /* POPULAR */
+
+        .popular {
+          max-width: 1200px;
+          margin: auto;
+          padding: 40px 35px 50px;
+          background: linear-gradient(#2869b0, #091534);
+          color: white;
+          text-align: center;
+        }
+
+        .popular h2 {
+          margin: 0;
+          font-size: 35px;
+          letter-spacing: 2px;
+        }
+
+        .visitLink {
+          display: inline-block;
+          margin: 10px 0 32px;
+          text-decoration: underline;
+        }
+
+        .popularGrid {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 18px;
+        }
+
+        .popularGrid a {
+          min-height: 215px;
+          background: white;
+          color: #222;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 14px;
+        }
+
+        .categoryIcon {
+          margin-bottom: 18px;
+          font-size: 44px;
+        }
+
+        .popularGrid strong {
+          font-size: 17px;
+        }
+
+        .popularGrid span {
+          margin-top: 10px;
+          font-size: 12px;
+          font-style: italic;
+        }
+
+        /* WHY BUY LOCAL */
+
+        .whyLocal {
+          max-width: 1150px;
+          margin: auto;
+          padding: 45px 40px;
+          background: #f7f7f7;
+          text-align: center;
+        }
+
+        .whyLocal h2 {
+          margin: 0;
+          color: #165093;
+          font-size: 30px;
+        }
+
+        .localLink {
+          display: inline-block;
+          margin: 8px 0 35px;
+          color: #3979b6;
+          font-style: italic;
+        }
+
+        .whyGrid {
+          display: grid;
+          grid-template-columns: 1.5fr .8fr;
+          gap: 35px;
+          text-align: left;
+        }
+
+        .whyText h3 {
+          margin: 0 0 8px;
+          color: #536d5c;
+          font-size: 22px;
+        }
+
+        .whyText p {
+          margin: 0 0 23px;
+          line-height: 1.55;
+        }
+
+        .localCard {
+          min-height: 330px;
+          padding: 25px;
+          background: #dce7ea;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+
+        .localCard strong {
+          margin: 18px 0;
+        }
+
+        .localCard a {
+          padding: 11px 22px;
+          background: #2468a6;
+          color: white;
+        }
+
+        .whyShop {
+          padding: 32px;
+          background: #67b689;
+          color: white;
+          text-align: center;
+        }
+
+        .whyShop h2 {
+          margin: 0 0 7px;
+          font-size: 37px;
+        }
+
+        .whyShop a {
+          text-decoration: underline;
+        }
+
+        /* SERVICE */
+
+        .serviceHero {
+          min-height: 340px;
+          background: #292929;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          padding: 45px 20px;
+        }
+
+        .serviceHero h2 {
+          margin: 10px;
+          font-size: 36px;
+        }
+
+        .serviceHero p {
+          max-width: 700px;
+        }
+
+        .serviceHero a {
+          margin-top: 15px;
+          border: 1px solid white;
+          padding: 10px 20px;
+        }
+
+        /* REVIEWS */
+
+        .reviews {
+          max-width: 1150px;
+          margin: auto;
+          padding: 40px 30px;
+        }
+
+        .reviewTitle {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 25px;
+          margin-bottom: 30px;
+        }
+
+        .reviewTitle h2 {
+          margin: 0;
+          font-size: 28px;
+        }
+
+        .reviewTitle a {
+          padding: 10px 18px;
+          background: #26263a;
+          color: white;
+        }
+
+        .reviewGrid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 35px;
+        }
+
+        .reviewGrid span {
+          display: block;
+          margin: 18px 0;
+          color: #c79513;
+          letter-spacing: 3px;
+        }
+
+        /* LOCATIONS */
+
+        .locationTitle {
+          padding: 32px 20px;
+          background: #286ab0;
+          color: white;
+          text-align: center;
+        }
+
+        .locationTitle h2 {
+          margin: 0 0 7px;
+          font-size: 34px;
+        }
+
+        .locationTitle a {
+          text-decoration: underline;
+        }
+
+        .locations {
+          padding: 50px 25px;
+          background: linear-gradient(#282942, #1266b5);
+          color: white;
+        }
+
+        .locationGrid {
+          max-width: 1100px;
+          margin: auto;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 35px 30px;
+        }
+
+        .locationGrid div {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          gap: 12px;
+        }
+
+        .locationGrid span {
+          font-size: 25px;
+        }
+
+        /* FOOTER */
+
+        .footer {
+          min-height: 180px;
+          background: linear-gradient(#18223d, #1471c3);
+          color: white;
+          text-align: center;
+          padding: 30px;
+        }
+
+        /* CHAT */
+
+        .chatLauncher {
+          position: fixed;
+          right: 72px;
+          bottom: 88px;
+          z-index: 90;
+          min-width: 225px;
+          min-height: 72px;
+          padding: 10px 16px;
+          border-radius: 10px;
+          background: white;
+          box-shadow: 0 4px 18px rgba(0,0,0,.22);
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .chatAvatar {
+          width: 45px;
+          height: 45px;
+          flex: 0 0 45px;
+          border-radius: 50%;
+          background: #143f74;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 13px;
+          font-weight: 900;
+        }
+
+        .chatText {
+          color: #444;
+          font-size: 14px;
+          line-height: 1.3;
+        }
+
+        .chatBubble {
+          position: fixed;
+          right: 22px;
+          bottom: 75px;
+          z-index: 91;
+          width: 52px;
+          height: 52px;
+          border-radius: 50%;
+          background: #e6a400;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          box-shadow: 0 4px 12px rgba(0,0,0,.2);
+        }
+
+        /* APP BAR */
+
+        .appBar {
+          position: fixed;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 100;
+          height: 66px;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          border-top: 1px solid #ccc;
+          background: white;
+        }
+
+        .appBar a,
+        .appBar button {
+          border: none;
+          border-right: 1px solid #ddd;
+          background: white;
+          color: #074796;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 3px;
+          cursor: pointer;
+          font-size: 18px;
+        }
+
+        .appBar span {
+          font-size: 11px;
+          font-weight: 700;
+        }
+
+        /* TABLET */
+
+        @media (max-width: 900px) {
+
+          .mainHeader {
+            height: auto;
+            min-height: 110px;
+            grid-template-columns: 1fr;
+          }
+
+          .logoBox {
+            order: 1;
+          }
+
+          .searchBox {
+            order: 2;
+            max-width: none;
+          }
+
+          .headerRight {
+            order: 3;
+            justify-content: center;
+          }
+
+          .heroTop {
+            height: auto;
+            grid-template-columns: 1fr;
+          }
+
+          .waveFront {
+            gap: 10px;
+          }
+
+          .productGrid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .popularGrid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .whyGrid {
+            grid-template-columns: 1fr;
+          }
+
+          .reviewGrid {
+            grid-template-columns: 1fr;
+          }
+
+          .locationGrid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+        }
+
+        /* PHONE */
+
+        @media (max-width: 600px) {
+
+          .topNav {
+            height: auto;
+            justify-content: center;
+            padding: 0 4px;
+          }
+
+          .topNav a {
+            padding: 9px 6px;
+            font-size: 10px;
+          }
+
+          .miniLinks {
+            display: none;
+          }
+
+          .storeBlock {
+            border-right: none;
+          }
+
+          .categoryNav {
+            height: auto;
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .categoryNav a {
+            padding: 13px 5px;
+            font-size: 12px;
+          }
+
+          .categoryNav a:last-child {
+            grid-column: 1 / -1;
+          }
+
+          .heroTop {
+            padding: 28px 18px 10px;
+            gap: 30px;
+          }
+
+          .heroLeft h1 {
+            text-align: center;
+            font-size: 25px;
+          }
+
+          .heroButtons {
+            grid-template-columns: 1fr 1fr;
+          }
+
+          .heroButtons .centralVac {
+            grid-column: 1 / -1;
+          }
+
+          .heroRight h2 {
+            font-size: 36px;
+            text-align: center;
+          }
+
+          .heroRight li {
+            font-size: 16px;
+          }
+
+          .qualityWave {
+            height: 90px;
+          }
+
+          .waveFront {
+            gap: 6px;
+            padding-left: 2%;
+            padding-right: 2%;
+          }
+
+          .waveFront span {
+            font-size: 15px;
+            letter-spacing: 1px;
+          }
+
+          .waveFront b {
+            font-size: 15px;
+          }
+
+          .featuredGrid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 7px;
+          }
+
+          .brandCard {
+            height: 78px;
+            border-width: 2px;
+          }
+
+          .logoStrip {
+            grid-template-columns: repeat(3, 1fr);
+          }
+
+          .popular {
+            padding: 32px 12px;
+          }
+
+          .popular h2 {
+            font-size: 26px;
+          }
+
+          .popularGrid {
+            gap: 8px;
+          }
+
+          .popularGrid a {
+            min-height: 175px;
+          }
+
+          .whyLocal {
+            padding: 38px 18px;
+          }
+
+          .whyText h3 {
+            font-size: 19px;
+          }
+
+          .whyShop h2 {
+            font-size: 27px;
+          }
+
+          .reviewTitle {
+            flex-direction: column;
+          }
+
+          .locationTitle h2 {
+            font-size: 25px;
+          }
+
+          .locationGrid {
+            grid-template-columns: 1fr 1fr;
+            gap: 30px 8px;
+          }
+
+          .locationGrid span {
+            font-size: 19px;
+          }
+
+          .locationGrid small {
+            font-size: 10px;
+          }
+
+          .chatLauncher {
+            right: 64px;
+            bottom: 80px;
+            min-width: 185px;
+            min-height: 60px;
+            padding: 8px 10px;
+          }
+
+          .chatAvatar {
+            width: 38px;
+            height: 38px;
+            flex-basis: 38px;
+          }
+
+          .chatText {
+            font-size: 12px;
+          }
+
+          .chatBubble {
+            right: 12px;
+            bottom: 73px;
+            width: 45px;
+            height: 45px;
+          }
+
+        }
+
+      `}</style>
+
     </main>
-  )
-}
+
+} 
