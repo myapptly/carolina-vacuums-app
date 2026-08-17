@@ -1498,7 +1498,7 @@ export default function Home() {
   .mainHeader {
     position: relative;
     height: auto;
-    min-height: 245px;
+    min-height: 205px;
     padding: 15px 12px 10px;
     display: grid;
     grid-template-columns: 52px 1fr 105px;
@@ -1579,7 +1579,7 @@ export default function Home() {
     grid-column: 1 / -1;
     grid-row: 3;
     width: 100%;
-    height: 45px;
+    height: 38px;
     padding: 0 6px;
     border-right: none;
     border-top: 1px solid #e1e4e8;
@@ -1653,8 +1653,8 @@ export default function Home() {
   }
 
   .heroButtons a {
-    min-height: 38px;
-    padding: 5px 4px;
+    min-height: 34px;
+    padding: 4px 4px;
     border: 3px solid #0753a9;
     background: #7da2d2;
     color: white;
@@ -1665,8 +1665,8 @@ export default function Home() {
 
   .heroButtons .centralVac {
     grid-column: auto;
-    min-height: 60px;
-    line-height: 1.25;
+    min-height: 42px;
+    line-height: 1.15;
   }
 
   .heroRight {
