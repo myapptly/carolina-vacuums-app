@@ -251,8 +251,8 @@ export default function Home() {
         <div className="productGrid">
 
   <a
-    href="https://www.carolinavacuums.com/_CGI/SEARCH3?FEATUREDBRAND=TRUE"
-    className="productCard"
+    href="https://www.carolinavacuums.com/home-appliances/vacuum-cleaners?pnf=1" 
+
   >
     <div className="productVisual">Featured Products</div>
     <strong>Shop Featured Products</strong>
@@ -260,8 +260,8 @@ export default function Home() {
   </a>
 
   <a
-    href="https://www.carolinavacuums.com/_CGI/SEARCH3?FEATUREDBRAND=TRUE"
-    className="productCard"
+    href="https://www.carolinavacuums.com/home-appliances/vacuum-cleaners?pnf=1" 
+
   >
     <div className="productVisual">Upright</div>
     <strong>Upright Vacuums</strong>
@@ -269,8 +269,8 @@ export default function Home() {
   </a>
 
   <a
-    href="https://www.carolinavacuums.com/_CGI/SEARCH3?FEATUREDBRAND=TRUEC"
-    className="productCard"
+    href="https://www.carolinavacuums.com/home-appliances/vacuum-cleaners?pnf=1" 
+
   >
     <div className="productVisual">Canister</div>
     <strong>Canister Vacuums</strong>
@@ -278,8 +278,8 @@ export default function Home() {
   </a>
 
   <a
-    href="https://www.carolinavacuums.com/_CGI/SEARCH3?FEATUREDBRAND=TRUE"
-    className="productCard"
+    href="https://www.carolinavacuums.com/home-appliances/vacuum-cleaners?pnf=1" 
+
   >
     <div className="productVisual">Cordless</div>
     <strong>Cordless Vacuums</strong>
