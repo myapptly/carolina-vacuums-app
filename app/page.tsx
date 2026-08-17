@@ -1489,174 +1489,389 @@ export default function Home() {
 
         @media (max-width: 600px) {
 
-          .topNav {
-            height: auto;
-            justify-content: center;
-            padding: 0 4px;
-          }
+  /* HIDE DESKTOP TOP MENU ON PHONE */
+  .topBar {
+    display: none;
+  }
 
-          .topNav a {
-            padding: 9px 6px;
-            font-size: 10px;
-          }
+  /* MOBILE HEADER - LIKE CAROLINA VACUUMS WEBSITE */
+  .mainHeader {
+    position: relative;
+    height: auto;
+    min-height: 245px;
+    padding: 15px 12px 10px;
+    display: grid;
+    grid-template-columns: 52px 1fr 105px;
+    grid-template-rows: 65px 58px 48px;
+    gap: 8px 6px;
+    align-items: center;
+    background: white;
+  }
 
-          .miniLinks {
-            display: none;
-          }
+  /* hamburger */
+  .mainHeader::before {
+    content: "☰";
+    grid-column: 1;
+    grid-row: 1;
+    color: #06447f;
+    font-size: 27px;
+    font-weight: 800;
+    text-align: center;
+  }
 
-          .storeBlock {
-            border-right: none;
-          }
+  .logoBox {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-          .categoryNav {
-            height: auto;
-            grid-template-columns: repeat(2, 1fr);
-          }
+  .logoBox :global(img) {
+    width: 135px !important;
+    height: 65px !important;
+    object-fit: contain !important;
+  }
 
-          .categoryNav a {
-            padding: 13px 5px;
-            font-size: 12px;
-          }
+  .headerRight {
+    display: contents;
+  }
 
-          .categoryNav a:last-child {
-            grid-column: 1 / -1;
-          }
+  /* ACCOUNT / CART */
+  .miniLinks {
+    grid-column: 3;
+    grid-row: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+  }
 
-          .heroTop {
-            padding: 28px 18px 10px;
-            gap: 30px;
-          }
+  .miniLinks a {
+    font-size: 11px;
+  }
 
-          .heroLeft h1 {
-            text-align: center;
-            font-size: 25px;
-          }
+  .miniLinks a:nth-child(2) {
+    display: none;
+  }
 
-          .heroButtons {
-            grid-template-columns: 1fr 1fr;
-          }
+  .miniLinks span {
+    font-size: 22px;
+  }
 
-          .heroButtons .centralVac {
-            grid-column: 1 / -1;
-          }
+  .miniLinks small {
+    display: block;
+    font-size: 11px;
+  }
 
-          .heroRight h2 {
-            font-size: 36px;
-            text-align: center;
-          }
+  /* SEARCH ACROSS FULL WIDTH */
+  .searchBox {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    max-width: none;
+    width: 100%;
+    height: 52px;
+    border-radius: 5px;
+    font-size: 16px;
+  }
 
-          .heroRight li {
-            font-size: 16px;
-          }
+  /* STORE ROW */
+  .storeBlock {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    width: 100%;
+    height: 45px;
+    padding: 0 6px;
+    border-right: none;
+    border-top: 1px solid #e1e4e8;
+    justify-content: flex-start;
+  }
 
-          .qualityWave {
-            height: 90px;
-          }
+  .storeBlock small {
+    display: none;
+  }
 
-          .waveFront {
-            gap: 6px;
-            padding-left: 2%;
-            padding-right: 2%;
-          }
+  .storeBlock strong {
+    font-size: 16px;
+  }
 
-          .waveFront span {
-            font-size: 15px;
-            letter-spacing: 1px;
-          }
+  .storeIcon {
+    font-size: 23px;
+  }
 
-          .waveFront b {
-            font-size: 15px;
-          }
+  /* HIDE DESKTOP CATEGORY BAR ON PHONE */
+  .categoryNav {
+    display: none;
+  }
 
-          .featuredGrid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 7px;
-          }
+  /* HERO - KEEP BOTH SIDES TOGETHER LIKE THE WEBSITE */
+  .hero {
+    width: 100%;
+    margin: 0;
+    background:
+      linear-gradient(
+        115deg,
+        #d9f4ef 0%,
+        #c7efe6 42%,
+        #edf8e7 100%
+      );
+  }
 
-          .brandCard {
-            height: 78px;
-            border-width: 2px;
-          }
+  .heroTop {
+    position: relative;
+    min-height: 285px;
+    height: auto;
+    padding: 24px 14px 42px;
+    display: grid;
+    grid-template-columns: 42% 58%;
+    gap: 10px;
+  }
 
-          .logoStrip {
-            grid-template-columns: repeat(3, 1fr);
-          }
+  .heroLeft {
+    min-width: 0;
+  }
 
-          .popular {
-            padding: 32px 12px;
-          }
+  /* serving line moves to lower right like original */
+  .heroLeft h1 {
+    position: absolute;
+    right: 15px;
+    bottom: 24px;
+    margin: 0;
+    max-width: 58%;
+    text-align: right;
+    color: #111;
+    font-size: 15px;
+    line-height: 1.15;
+    font-weight: 900;
+    font-style: italic;
+  }
 
-          .popular h2 {
-            font-size: 26px;
-          }
+  .heroButtons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
 
-          .popularGrid {
-            gap: 8px;
-          }
+  .heroButtons a {
+    min-height: 38px;
+    padding: 5px 4px;
+    border: 3px solid #0753a9;
+    background: #7da2d2;
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    border-radius: 3px;
+  }
 
-          .popularGrid a {
-            min-height: 175px;
-          }
+  .heroButtons .centralVac {
+    grid-column: auto;
+    min-height: 60px;
+    line-height: 1.25;
+  }
 
-          .whyLocal {
-            padding: 38px 18px;
-          }
+  .heroRight {
+    min-width: 0;
+  }
 
-          .whyText h3 {
-            font-size: 19px;
-          }
+  .heroRight h2 {
+    margin: -3px 0 10px;
+    color: #d51d28;
+    font-family:
+      "Brush Script MT",
+      "Segoe Script",
+      "Lucida Handwriting",
+      cursive;
+    font-size: 29px;
+    line-height: 1;
+    font-style: italic;
+    font-weight: 900;
+    text-align: left;
+    white-space: nowrap;
+  }
 
-          .whyShop h2 {
-            font-size: 27px;
-          }
+  .heroRight ul {
+    margin: 0;
+    padding-left: 17px;
+  }
 
-          .reviewTitle {
-            flex-direction: column;
-          }
+  .heroRight li {
+    margin: 3px 0;
+    font-size: 11px;
+    line-height: 1.15;
+    font-weight: 500;
+  }
 
-          .locationTitle h2 {
-            font-size: 25px;
-          }
+  /* WAVY QUALITY BANNER */
+  .qualityWave {
+    height: 75px;
+    margin-top: -4px;
+    position: relative;
+    overflow: hidden;
+  }
 
-          .locationGrid {
-            grid-template-columns: 1fr 1fr;
-            gap: 30px 8px;
-          }
+  .waveBack {
+    top: 11px;
+    height: 62px;
+    left: -8%;
+    right: -8%;
+    border-radius: 50% 50% 5% 5% / 38% 38% 5% 5%;
+  }
 
-          .locationGrid span {
-            font-size: 19px;
-          }
+  .waveFront {
+    top: 25px;
+    left: -7%;
+    right: -7%;
+    min-height: 52px;
+    padding: 10px 5%;
+    gap: 5px;
+  }
 
-          .locationGrid small {
-            font-size: 10px;
-          }
+  .waveFront span {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    font-weight: 900;
+    white-space: nowrap;
+  }
 
-          .chatLauncher {
-            right: 64px;
-            bottom: 80px;
-            min-width: 185px;
-            min-height: 60px;
-            padding: 8px 10px;
-          }
+  .waveFront b {
+    font-size: 13px;
+  }
 
-          .chatAvatar {
-            width: 38px;
-            height: 38px;
-            flex-basis: 38px;
-          }
+  /* FEATURED BRANDS LIKE ORIGINAL MOBILE SITE */
+  .featuredBrands {
+    padding: 22px 10px 30px;
+    background: #6f99d0;
+  }
 
-          .chatText {
-            font-size: 12px;
-          }
+  .featuredBrands h2 {
+    margin-bottom: 14px;
+    font-size: 24px;
+  }
 
-          .chatBubble {
-            right: 12px;
-            bottom: 73px;
-            width: 45px;
-            height: 45px;
-          }
+  .featuredGrid {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
 
-        }
+  .brandCard {
+    height: 95px;
+    border: 3px solid #063f77;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .brandCard:nth-child(3) {
+    grid-column: 1 / -1;
+    width: 50%;
+    justify-self: center;
+  }
+
+  .brandCard :global(img) {
+    max-width: 90% !important;
+    max-height: 75px !important;
+    object-fit: contain !important;
+  }
+
+  /* KEEP SALES STRIP TIGHT */
+  .salesStrip {
+    padding: 10px 6px;
+    font-size: 13px;
+  }
+
+  /* REST OF PAGE */
+  .productGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+  }
+
+  .productVisual {
+    height: 105px;
+  }
+
+  .logoStrip {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 14px 8px;
+  }
+
+  .popular {
+    padding: 32px 12px;
+  }
+
+  .popular h2 {
+    font-size: 26px;
+  }
+
+  .popularGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .popularGrid a {
+    min-height: 175px;
+  }
+
+  .whyLocal {
+    padding: 38px 18px;
+  }
+
+  .whyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .whyText h3 {
+    font-size: 19px;
+  }
+
+  .reviewTitle {
+    flex-direction: column;
+  }
+
+  .reviewGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .locationGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 8px;
+  }
+
+  .locationGrid span {
+    font-size: 19px;
+  }
+
+  .locationGrid small {
+    font-size: 10px;
+  }
+
+  /* CHAT */
+  .chatLauncher {
+    right: 58px;
+    bottom: 79px;
+    min-width: 190px;
+    min-height: 60px;
+    padding: 8px 10px;
+  }
+
+  .chatAvatar {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+
+  .chatText {
+    font-size: 12px;
+  }
+
+  .chatBubble {
+    right: 10px;
+    bottom: 72px;
+    width: 45px;
+    height: 45px;
+  }
+
+} 
 
       `}</style>
 
