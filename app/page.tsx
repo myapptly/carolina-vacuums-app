@@ -66,8 +66,8 @@ export default function Home() {
             <span className="storeIcon">▰</span>
 
             <div>
-              <small>My Store:</small>
-              <strong>Winston-Salem</strong>
+              <small>Locations:</small>
+              <strong>Find a Store</strong>
             </div>
           </a>
 
@@ -94,28 +94,26 @@ export default function Home() {
 
       {/* CATEGORY NAVIGATION */}
       <nav className="categoryNav">
+  <a href="https://www.carolinavacuums.com/_CGI/SEARCH3.HTML?MAJOR=VAC">
+    Vacuum Cleaners
+  </a>
 
-        <a href={`${site}/home-appliances/vacuum-cleaners`}>
-          Vacuum Cleaners
-        </a>
+  <a href="https://www.carolinavacuums.com/">
+    Floor Care
+  </a>
 
-        <a href={site}>
-          Floor Care
-        </a>
+  <a href="https://www.carolinavacuums.com/">
+    Air Care
+  </a>
 
-        <a href={`${site}/home-air-control`}>
-          Air Care
-        </a>
+  <a href="https://www.carolinavacuums.com/">
+    Accessories
+  </a>
 
-        <a href={site}>
-          Accessories
-        </a>
-
-        <a href={`${site}/vacuum-service-repair`}>
-          Service and Repair
-        </a>
-
-      </nav>
+  <a href="https://www.carolinavacuums.com/vacuum-service-repair.html">
+    Service and Repair
+  </a>
+</nav> 
 
       {/* MAIN HERO */}
       <section className="hero">
@@ -128,25 +126,25 @@ export default function Home() {
 
             <div className="heroButtons">
 
-              <a href={`${site}/locations`}>
-                Find A Location
-              </a>
+  <a href="https://www.carolinavacuums.com/locations">
+    Find A Location
+  </a>
 
-              <a href={`${site}/home-appliances/vacuum-cleaners`}>
-                Shop Our Catalog
-              </a>
+  <a href="https://www.carolinavacuums.com/home-appliances/vacuum-cleaners">
+    Shop Our Catalog
+  </a>
 
-              <a href={`${site}/vacuum-service-repair`}>
-                Service Request
-              </a>
+  <a href="https://www.carolinavacuums.com/vacuum-service-repair.html">
+    Service Request
+  </a>
 
-              <a href={site} className="centralVac">
-                Central Vacuums
-                <span>Sales Service</span>
-                <span>Installation</span>
-              </a>
+  <a href="https://www.carolinavacuums.com/" className="centralVac">
+    Central Vacuums
+    <span>Sales Service</span>
+    <span>Installation</span>
+  </a>
 
-            </div>
+</div> 
 
           </div>
 
@@ -185,45 +183,55 @@ export default function Home() {
 
         <h2>Featured Brands</h2>
 
-        <div className="featuredGrid">
+        <div className="brandGrid">
 
-          <a href={`${site}/brands`} className="brandCard">
-            <Image
-              src={miele}
-              alt="Miele"
-              style={{
-                width: '150px',
-                height: '75px',
-                objectFit: 'contain',
-              }}
-            />
-          </a>
+        <a
 
-          <a href={`${site}/brands`} className="brandCard">
-            <Image
-              src={sebo}
-              alt="SEBO"
-              style={{
-                width: '150px',
-                height: '75px',
-                objectFit: 'contain',
-              }}
-            />
-          </a>
+    href="https://www.carolinavacuums.com/products?brands=miele"
+    className="brandCard"
+  >
+    <Image
+      src={miele}
+      alt="Miele"
+      style={{
+        width: '150px',
+        height: '75px',
+        objectFit: 'contain',
+      }}
+    />
+  </a>
 
-          <a href={`${site}/brands`} className="brandCard">
-            <Image
-              src={riccar}
-              alt="Riccar"
-              style={{
-                width: '150px',
-                height: '75px',
-                objectFit: 'contain',
-              }}
-            />
-          </a>
+  <a
+    href="https://www.carolinavacuums.com/by-brand/sebo/sebo.html"
+    className="brandCard"
+  >
+    <Image
+      src={sebo}
+      alt="SEBO"
+      style={{
+        width: '150px',
+        height: '75px',
+        objectFit: 'contain',
+      }}
+    />
+  </a>
 
-        </div>
+  <a
+    href="https://www.carolinavacuums.com/by-brand/ricr/Riccar.html"
+    className="brandCard"
+  >
+    <Image
+      src={riccar}
+      alt="Riccar"
+      style={{
+        width: '150px',
+        height: '75px',
+        objectFit: 'contain',
+      }}
+    />
+  </a>
+
+</div> 
 
       </section>
 
@@ -242,43 +250,43 @@ export default function Home() {
 
         <div className="productGrid">
 
-          <a
-            href={`${site}/home-appliances/vacuum-cleaners`}
-            className="productCard"
-          >
-            <div className="productVisual">Vacuum Cleaners</div>
-            <strong>Shop Featured Vacuums</strong>
-            <span>View Products</span>
-          </a>
+  <a
+    href="https://www.carolinavacuums.com/_CGI/SEARCH3?FEATUREDBRAND=TRUE"
+    className="productCard"
+  >
+    <div className="productVisual">Featured Products</div>
+    <strong>Shop Featured Products</strong>
+    <span>View Products</span>
+  </a>
 
-          <a
-            href={`${site}/home-appliances/vacuum-cleaners`}
-            className="productCard"
-          >
-            <div className="productVisual">Upright</div>
-            <strong>Upright Vacuums</strong>
-            <span>View Products</span>
-          </a>
+  <a
+    href="https://www.carolinavacuums.com/_CGI/SEARCH3?FEATUREDBRAND=TRUE"
+    className="productCard"
+  >
+    <div className="productVisual">Upright</div>
+    <strong>Upright Vacuums</strong>
+    <span>View Products</span>
+  </a>
 
-          <a
-            href={`${site}/home-appliances/vacuum-cleaners`}
-            className="productCard"
-          >
-            <div className="productVisual">Canister</div>
-            <strong>Canister Vacuums</strong>
-            <span>View Products</span>
-          </a>
+  <a
+    href="https://www.carolinavacuums.com/_CGI/SEARCH3?FEATUREDBRAND=TRUEC"
+    className="productCard"
+  >
+    <div className="productVisual">Canister</div>
+    <strong>Canister Vacuums</strong>
+    <span>View Products</span>
+  </a>
 
-          <a
-            href={`${site}/home-appliances/vacuum-cleaners`}
-            className="productCard"
-          >
-            <div className="productVisual">Cordless</div>
-            <strong>Cordless Vacuums</strong>
-            <span>View Products</span>
-          </a>
+  <a
+    href="https://www.carolinavacuums.com/_CGI/SEARCH3?FEATUREDBRAND=TRUE"
+    className="productCard"
+  >
+    <div className="productVisual">Cordless</div>
+    <strong>Cordless Vacuums</strong>
+    <span>View Products</span>
+  </a>
 
-        </div>
+</div> 
 
       </section>
 
@@ -348,37 +356,37 @@ export default function Home() {
 
         <div className="popularGrid">
 
-          <a href={`${site}/home-appliances/vacuum-cleaners`}>
-            <div className="categoryIcon">▥</div>
-            <strong>UPRIGHT<br />VACUUMS</strong>
-            <span>View All »</span>
-          </a>
+  <a href="https://www.carolinavacuums.com/_CGI/SEARCH3.HTML?MAJOR=VAC">
+    <div className="categoryIcon">▥</div>
+    <strong>UPRIGHT<br />VACUUMS</strong>
+    <span>View All »</span>
+  </a>
 
-          <a href={`${site}/home-appliances/vacuum-cleaners`}>
-            <div className="categoryIcon">◉</div>
-            <strong>CANISTER<br />VACUUMS</strong>
-            <span>View All »</span>
-          </a>
+  <a href="https://www.carolinavacuums.com/_CGI/SEARCH3.HTML?MAJOR=VAC">
+    <div className="categoryIcon">◉</div>
+    <strong>CANISTER<br />VACUUMS</strong>
+    <span>View All »</span>
+  </a>
 
-          <a href={`${site}/home-appliances/vacuum-cleaners`}>
-            <div className="categoryIcon">⚡</div>
-            <strong>CORDLESS<br />VACUUMS</strong>
-            <span>View All »</span>
-          </a>
+  <a href="https://www.carolinavacuums.com/_CGI/SEARCH3.HTML?MAJOR=VAC">
+    <div className="categoryIcon">⚡</div>
+    <strong>CORDLESS<br />VACUUMS</strong>
+    <span>View All »</span>
+  </a>
 
-          <a href={`${site}/home-air-control`}>
-            <div className="categoryIcon">▣</div>
-            <strong>AIR CARE</strong>
-            <span>View All »</span>
-          </a>
+  <a href="https://www.carolinavacuums.com/">
+    <div className="categoryIcon">▣</div>
+    <strong>AIR CARE</strong>
+    <span>View All »</span>
+  </a>
 
-          <a href={site}>
-            <div className="categoryIcon">⌁</div>
-            <strong>FLOOR CARE</strong>
-            <span>View All »</span>
-          </a>
+  <a href="https://www.carolinavacuums.com/">
+    <div className="categoryIcon">⌁</div>
+    <strong>FLOOR CARE</strong>
+    <span>View All »</span>
+  </a>
 
-        </div>
+</div> 
 
       </section>
 
@@ -545,43 +553,43 @@ export default function Home() {
 
         <div className="locationGrid">
 
-          <div>
-            <strong>Concord, NC</strong>
-            <span>704-910-4634</span>
-            <small>carolinavacs05@gmail.com</small>
-          </div>
+  <a href="https://www.carolinavacuums.com/locations/concord">
+    <strong>Concord, NC</strong>
+    <span>704-910-4634</span>
+    <small>carolinavacs05@gmail.com</small>
+  </a>
 
-          <div>
-            <strong>Greenville, SC</strong>
-            <span>864-286-6505</span>
-            <small>carolinavacs09@gmail.com</small>
-          </div>
+  <a href="https://www.carolinavacuums.com/locations/greenville">
+    <strong>Greenville, SC</strong>
+    <span>864-286-6505</span>
+    <small>carolinavacs09@gmail.com</small>
+  </a>
 
-          <div>
-            <strong>Mooresville, NC</strong>
-            <span>704-660-0556</span>
-            <small>carolinavacs12@gmail.com</small>
-          </div>
+  <a href="https://www.carolinavacuums.com/locations/mooresville">
+    <strong>Mooresville, NC</strong>
+    <span>704-660-0556</span>
+    <small>carolinavacs12@gmail.com</small>
+  </a>
 
-          <div>
-            <strong>Raleigh, NC</strong>
-            <span>919-484-2288</span>
-            <small>carolinavacs15@gmail.com</small>
-          </div>
+  <a href="https://www.carolinavacuums.com/locations/raleigh">
+    <strong>Raleigh, NC</strong>
+    <span>919-484-2288</span>
+    <small>carolinavacs15@gmail.com</small>
+  </a>
 
-          <div>
-            <strong>Charlotte, NC</strong>
-            <span>704-341-9700</span>
-            <small>carolinavacs04@gmail.com</small>
-          </div>
+  <a href="https://www.carolinavacuums.com/locations/charlotte">
+    <strong>Charlotte, NC</strong>
+    <span>704-341-9700</span>
+    <small>carolinavacs04@gmail.com</small>
+  </a>
 
-          <div>
-            <strong>Winston-Salem, NC</strong>
-            <span>336-768-6068</span>
-            <small>carolinavacs02@gmail.com</small>
-          </div>
+  <a href="https://www.carolinavacuums.com/locations/winston-salem">
+    <strong>Winston-Salem, NC</strong>
+    <span>336-768-6068</span>
+    <small>carolinavacs02@gmail.com</small>
+  </a>
 
-        </div>
+</div> 
 
       </section>
 
