@@ -187,7 +187,7 @@ export default function Home() {
 
         <a
 
-    href="https://www.carolinavacuums.com/products?brands=miele"
+    href="https://www.carolinavacuums.com/home-appliances/vacuum-cleaners?brand=miele"
     className="brandCard"
   >
     <Image
@@ -202,7 +202,7 @@ export default function Home() {
   </a>
 
   <a
-    href="https://www.carolinavacuums.com/by-brand/sebo/sebo.html"
+    href="https://www.carolinavacuums.com/home-appliances/vacuum-cleaners?brand=sebo"
     className="brandCard"
   >
     <Image
@@ -217,7 +217,7 @@ export default function Home() {
   </a>
 
   <a
-    href="https://www.carolinavacuums.com/by-brand/ricr/Riccar.html"
+    href="https://www.carolinavacuums.com/home-appliances/vacuum-cleaners?brand=riccar"
     className="brandCard"
   >
     <Image
