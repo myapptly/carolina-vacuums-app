@@ -241,54 +241,7 @@ export default function Home() {
           Vacuum Sales & Repair in North Carolina & South Carolina
         </strong>
         <span>Carolina Vacuums</span>
-      </section>
-
-     {/* FEATURED PRODUCTS */}
-<section className="products">
-
-  <h2>Featured Products</h2>
-
-  <div className="productGrid">
-
-    <a
-      href="https://www.carolinavacuums.com/_CGI/SEARCH3?FEATUREDBRAND=TRUE"
-      className="productCard"
-    >
-      <div className="productVisual">Featured Products</div>
-      <strong>Shop Featured Products</strong>
-      <span>View Products</span>
-    </a>
-
-    <a
-      href="https://www.carolinavacuums.com/_CGI/SEARCH3?FEATUREDBRAND=TRUE"
-      className="productCard"
-    >
-      <div className="productVisual">Upright</div>
-      <strong>Upright Vacuums</strong>
-      <span>View Products</span>
-    </a>
-
-    <a
-      href="https://www.carolinavacuums.com/_CGI/SEARCH3?FEATUREDBRAND=TRUE"
-      className="productCard"
-    >
-      <div className="productVisual">Canister</div>
-      <strong>Canister Vacuums</strong>
-      <span>View Products</span>
-    </a>
-
-    <a
-      href="https://www.carolinavacuums.com/_CGI/SEARCH3?FEATUREDBRAND=TRUE"
-      className="productCard"
-    >
-      <div className="productVisual">Cordless</div>
-      <strong>Cordless Vacuums</strong>
-      <span>View Products</span>
-    </a>
-
-  </div>
-
-</section>
+      </section>  
 
       {/* BRAND STRIP */}
       <section className="logoStrip">
