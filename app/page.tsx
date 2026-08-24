@@ -295,22 +295,6 @@ export default function Home() {
 
           </div>
 
-          <div className="localCard">
-
-            <Image
-              src={logo}
-              alt="Carolina Vacuums"
-              style={{
-                width: '230px',
-                height: '150px',
-                objectFit: 'contain',
-              }}
-            />
-
-            <strong>Professional Local Service</strong>
-
-           </div>
-
         </div>
 
       </section>
