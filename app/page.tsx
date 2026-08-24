@@ -58,7 +58,7 @@ export default function Home() {
   <a href={`${site}/locations`}>Locations</a>
   <a href={`${site}/home-appliances/vacuum-cleaners`}>Shop</a>
   <a href={`${site}/brands`}>Brands</a>
-  <a href={`${site}/vacuum-service-repair.html`}>Service & Repair</a>
+  <a href={`${site}/vacuum-service-repair`}>Service & Repair</a> 
 </div> 
  
         <a href={site} className="searchBox">
