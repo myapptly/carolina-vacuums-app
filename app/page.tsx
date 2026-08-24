@@ -309,28 +309,13 @@ export default function Home() {
 
             <strong>Professional Local Service</strong>
 
-            <a href={`${site}/locations`}>
-              Visit A Store
-            </a>
-
-          </div>
+           </div>
 
         </div>
 
       </section>
 
-      {/* WHY SHOP */}
-      <section className="whyShop">
-
-        <h2>WHY SHOP WITH US</h2>
-
-        <a href={`${site}/locations`}>
-          Visit any of our 6 Locations »
-        </a>
-
-      </section>
-
-      {/* SERVICE */}
+     {/* SERVICE */}
       <section className="serviceHero">
 
         <Image
