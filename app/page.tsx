@@ -486,6 +486,17 @@ export default function Home() {
         ●
       </a>
 
+      <section className="qrSection">
+  <h2>Carolina Vacuums App</h2>
+  <p>Scan to open the app on your phone.</p>
+
+  <img
+    src="/carolina-app-qr.png"
+    alt="QR code for the Carolina Vacuums app"
+    className="qrImage"
+  />
+</section> 
+
       {/* APP NAVIGATION BAR */}
       <section className="appBar">
 
@@ -526,6 +537,30 @@ export default function Home() {
           padding-bottom: 66px;
         }
 
+       .qrSection {
+  padding: 28px 16px 90px;
+  text-align: center;
+  background: #fff;
+}
+
+.qrSection h2 {
+  margin-bottom: 8px;
+  color: #06447f;
+}
+
+.qrSection p {
+  margin-bottom: 18px;
+  color: #444;
+}
+
+.qrImage {
+  width: 220px;
+  max-width: 70%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+} 
+ 
         .heidiSection {
   padding: 24px 16px;
   background: white;
