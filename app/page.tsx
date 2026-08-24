@@ -1357,16 +1357,48 @@ export default function Home() {
     background: white;
   }
 
-  /* hamburger */
-  .mainHeader::before {
-    content: "☰";
-    grid-column: 1;
-    grid-row: 1;
-    color: #06447f;
-    font-size: 27px;
-    font-weight: 800;
-    text-align: center;
-  }
+  .menuButton {
+  grid-column: 1;
+  grid-row: 1;
+  background: transparent;
+  border: none;
+  color: #06447f;
+  font-size: 27px;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+  padding: 0;
+}
+
+.mobileMenu {
+  display: none;
+  position: absolute;
+  top: 65px;
+  left: 10px;
+  z-index: 999;
+  background: white;
+  border: 1px solid #d6d6d6;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  min-width: 190px;
+  padding: 8px 0;
+}
+
+.mobileMenu.open {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileMenu a {
+  padding: 12px 16px;
+  color: #06447f;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.mobileMenu a:hover {
+  background: #f3f6f9;
+} 
 
   .logoBox {
     grid-column: 2;
