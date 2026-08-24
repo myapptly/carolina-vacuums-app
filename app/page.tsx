@@ -254,6 +254,14 @@ export default function Home() {
 
       </section>
 
+      <section className="heidiSection">
+  <img
+    src="/heidi.png"
+    alt="Carolina Vacuums customer service"
+    className="heidiImage"
+  />
+</section> 
+
       {/* SALES STRIP */}
       <section className="salesStrip">
         <strong>
@@ -517,6 +525,21 @@ export default function Home() {
           font-family: Arial, Helvetica, sans-serif;
           padding-bottom: 66px;
         }
+
+        .heidiSection {
+  padding: 24px 16px;
+  background: white;
+  text-align: center;
+}
+
+.heidiImage {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+  margin: 0 auto;
+} 
 
         a {
           color: inherit;
