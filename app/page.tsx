@@ -153,9 +153,9 @@ export default function Home() {
     Shop Our Catalog
   </a>
 
-  <a href="https://www.carolinavacuums.com/vacuum-service-repair.html">
-    Service Request
-  </a>
+  <a href="https://www.carolinavacuums.com/vacuum-service-repair">
+  Service Request
+</a>
 
   <a href="https://www.carolinavacuums.com/" className="centralVac">
     Central Vacuums
