@@ -42,6 +42,25 @@ export default function Home() {
       {/* MAIN HEADER */}
       <section className="mainHeader">
 
+        <button
+  className="menuButton"
+  onClick={() => {
+    const menu = document.getElementById('mobileMenu')
+    if (menu) menu.classList.toggle('open')
+  }}
+  aria-label="Open menu"
+>
+  ☰
+</button> 
+
+       <div id="mobileMenu" className="mobileMenu">
+  <a href={site}>Home</a>
+  <a href={`${site}/locations`}>Locations</a>
+  <a href={`${site}/home-appliances/vacuum-cleaners`}>Shop</a>
+  <a href={`${site}/brands`}>Brands</a>
+  <a href={`${site}/vacuum-service-repair.html`}>Service & Repair</a>
+</div> 
+ 
         <a href={site} className="searchBox">
           <span>What can we help you find?</span>
           <span className="searchIcon">⌕</span>
