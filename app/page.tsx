@@ -169,8 +169,15 @@ export default function Home() {
 
           <div className="heroRight">
 
-            <h2>Discover the Difference!</h2>
-
+<h2
+  style={{
+    whiteSpace: "normal",
+    lineHeight: 1.05,
+    fontSize: "clamp(30px, 7vw, 48px)",
+  }}
+>
+  Discover the Difference!
+</h2> 
             <ul>
               <li>Try it FREE Before You Buy It</li>
               <li>30 DAY IN-HOME TRIAL</li>
