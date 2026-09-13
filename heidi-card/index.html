@@ -2,37 +2,85 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b4f88">
 <title>Heidi Joyce | Carolina Vacuums and More</title>
 <style>
-:root{--navy:#073365;--blue:#0b4f88;--blue2:#2d97d3;--pale:#eaf4fb;--line:#cfe2ef;--green:#4fa770;--ink:#0a315e}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%}body{min-height:100dvh;display:grid;place-items:center;background:var(--pale);font-family:Arial,Helvetica,sans-serif;color:var(--ink);padding:8px}.card{width:min(430px,100%);height:min(100dvh,900px);background:#fff;overflow:hidden;box-shadow:0 18px 48px rgba(16,67,110,.22)}
-.header{position:relative;height:14.5%;overflow:hidden;background:linear-gradient(#f6fbff,#fff,#edf7fd)}.header:after{content:"";position:absolute;left:0;right:0;bottom:0;height:26%;background:#5da9dc;clip-path:polygon(0 34%,100% 65%,100% 100%,0 100%)}.header img{position:absolute;left:5%;top:12%;width:40%;height:54%;object-fit:contain}.tag{position:absolute;right:5%;top:13%;width:47%;text-align:right}.tag .big{font:italic 700 clamp(17px,4.8vw,31px)/.95 Georgia,serif;color:#0c4b84}.tag .small{margin-top:8px;font-size:clamp(7px,1.85vw,12px);font-weight:900;letter-spacing:.16em;color:#0b3966}
-.profile{position:relative;height:24.5%;padding:2.2% 4.5%}.profile>img{position:absolute;left:4.5%;top:6%;width:30%;height:88%;object-fit:cover;object-position:center 20%;border-radius:20px;border:4px solid #fff;box-shadow:0 10px 28px rgba(16,67,110,.18);outline:1px solid #a9cbe0}.who{position:absolute;left:37%;top:8%;width:42%}.who h1{margin:0;font-size:clamp(25px,6vw,43px);line-height:.93;letter-spacing:-.035em}.who .title{margin-top:6px;font-size:clamp(16px,4vw,27px);font-weight:800;color:#1874ad}.who .org{margin-top:8px;font-size:clamp(11px,2.8vw,18px);font-weight:700}.bar{margin-top:9px;width:52%;height:3px;border-radius:99px;background:var(--green)}.who a{display:block;color:inherit;text-decoration:none}.phone{margin-top:9px;font-size:clamp(15px,3.8vw,25px);font-weight:700}.email,.addr{margin-top:5px;font-size:clamp(10px,2.55vw,16px);line-height:1.15}.side{position:absolute;right:2.5%;top:24%;width:17%;padding-left:2%;border-left:1px solid #bad2e1;text-align:center;font:italic clamp(10px,3vw,19px)/1.05 Georgia,serif;color:#07518d}
-.actions{height:22.5%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,1fr);gap:5% 2.2%;padding:1.4% 4.3%}.btn{min-width:0;display:flex;align-items:center;border:0;border-radius:14px;padding:0 10px;box-shadow:0 2px 7px rgba(0,0,0,.1);text-decoration:none;font-weight:800}.btn .ico{font-size:clamp(22px,5.5vw,38px);margin-right:7%}.btn b{font-size:clamp(13px,3.25vw,21px)}.btn small{display:block;font-size:clamp(9px,2.5vw,15px);font-weight:400}.dark{background:linear-gradient(90deg,#075a98,#0e6dab);color:#fff}.mid{background:linear-gradient(90deg,#2587c5,#309add);color:#fff}.light{background:#dcecf8;color:var(--navy)}
-.share{position:relative;height:17%;border-top:1px solid var(--line)}.mini-photo{position:absolute;left:4.5%;top:11%;height:77%;width:21.5%;object-fit:cover;object-position:center 20%;border-radius:10px;border:3px solid #0b548d}.sharecopy{position:absolute;left:28%;top:14%;width:25%}.sharecopy .head{font:italic clamp(18px,4.7vw,31px)/1 Georgia,serif;color:#07558f}.sharecopy .copy{margin-top:10px;font-size:clamp(9px,2.55vw,16px);line-height:1.15}.sep{position:absolute;left:54%;top:14%;height:72%;border-left:1px solid #bdd4e3}.keep{position:absolute;left:58%;top:14%;width:38%;height:72%;display:flex;align-items:center;gap:8%}.keep .phoneicon{display:flex;align-items:center;justify-content:center;aspect-ratio:1;width:26%;border-radius:50%;background:#eef7fd;font-size:clamp(24px,6vw,40px)}.keep b{font-size:clamp(11px,3vw,20px);line-height:1.1}.keep p{margin:6px 0 0;font-size:clamp(8px,2.3vw,14px);line-height:1.15;color:#356182}.app-link{display:inline-block;margin-top:6px;color:#07558f;font-size:clamp(8px,2.2vw,13px);font-weight:900;text-decoration:none}
-.brands{height:10.5%;display:grid;grid-template-columns:repeat(3,1fr);align-items:center;gap:5%;border-top:1px solid var(--line);padding:1.5% 7.5%;text-align:center}.miele{display:flex;align-items:center;justify-content:center;height:64%;background:#b71925;color:#fff;font-size:clamp(21px,5.5vw,38px);font-weight:900}.sebo{font-size:clamp(22px,5.7vw,39px);font-weight:900;color:#083b70}.riccar{font:clamp(22px,5.4vw,37px) Georgia,serif;color:#000}
-.footer{position:relative;height:11%;overflow:hidden;background:linear-gradient(90deg,#2a91cf,#1174b5,#09659f);color:#fff}.footer:before{content:"";position:absolute;left:0;right:0;top:0;height:28%;background:#c0e2f4;clip-path:polygon(0 15%,45% 70%,100% 30%,100% 0,0 0)}.quality{position:absolute;left:6.5%;top:42%;font-size:clamp(9px,2.5vw,16px)}.since{position:absolute;right:6.5%;top:42%;font-size:clamp(8px,2.3vw,15px);font-style:italic}.apptly{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);font-size:clamp(7px,1.8vw,12px);color:#fff;text-decoration:none}.status{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#fff;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800;color:#267650;box-shadow:0 4px 16px rgba(0,0,0,.15)}
-@media(max-height:760px){body{place-items:start center}.card{height:100dvh}.tag .small{margin-top:5px}.who .org,.phone{margin-top:5px}.email,.addr{margin-top:3px}.bar{margin-top:5px}}
+:root{--navy:#073365;--blue:#0b5f9e;--blue2:#2f99d2;--pale:#eaf4fb;--line:#d5e6f0;--green:#4fa770;--ink:#0a315e}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:var(--pale);color:var(--ink)}
+body{min-height:100svh;display:flex;justify-content:center;padding:6px}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.card{width:min(430px,100%);min-height:calc(100svh - 12px);background:#fff;box-shadow:0 12px 34px rgba(16,67,110,.20);overflow:hidden;display:flex;flex-direction:column}
+.header{position:relative;min-height:72px;padding:10px 16px 14px;display:grid;grid-template-columns:42% 1fr;align-items:start;gap:10px;background:linear-gradient(#f6fbff,#fff,#edf7fd);border-bottom:7px solid #55a5d7}
+.header img{width:100%;height:46px;object-fit:contain;object-position:left center}
+.tag{text-align:right}.tag .big{font:italic 700 23px/.9 Georgia,serif;color:#0c4b84}.tag .small{margin-top:6px;font-size:7px;font-weight:900;letter-spacing:.12em;color:#0b3966;white-space:nowrap}
+.profile{display:grid;grid-template-columns:116px 1fr;gap:14px;padding:10px 16px 9px;align-items:center}
+.portrait{width:116px;height:132px;object-fit:cover;object-position:center 20%;border-radius:18px;border:4px solid #fff;box-shadow:0 7px 20px rgba(16,67,110,.17);outline:1px solid #a9cbe0}
+.who h1{margin:0;font-size:36px;line-height:.9;letter-spacing:-.035em;color:var(--navy)}
+.who .title{margin-top:7px;font-size:21px;font-weight:800;color:#1874ad}.who .org{margin-top:4px;font-size:13px;font-weight:800}.bar{margin:7px 0;width:76px;height:3px;border-radius:99px;background:var(--green)}
+.contactline{display:block;margin-top:4px;font-size:12px;line-height:1.2;color:#214c73}.contactline.phone{font-size:16px;font-weight:800;color:var(--ink)}
+.quote{padding:0 16px 8px;text-align:center;font:italic 13px/1.15 Georgia,serif;color:#07518d}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:7px 8px;padding:0 14px 9px}
+.btn{min-height:45px;border:0;border-radius:13px;padding:6px 10px;display:flex;align-items:center;justify-content:flex-start;gap:8px;box-shadow:0 2px 7px rgba(0,0,0,.09);font-weight:800;text-align:left;cursor:pointer}
+.btn .ico{font-size:24px;line-height:1;flex:0 0 auto}.btn b{display:block;font-size:14px;line-height:1.05}.btn small{display:block;margin-top:2px;font-size:10px;line-height:1.05;font-weight:400}.dark{background:linear-gradient(90deg,#075a98,#0e6dab);color:#fff}.mid{background:linear-gradient(90deg,#2587c5,#309add);color:#fff}.light{background:#dcecf8;color:var(--navy)}
+.share{display:grid;grid-template-columns:76px 1fr 1fr;gap:10px;align-items:center;margin:0 14px;padding:9px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.share-photo{width:76px;height:76px;border-radius:12px;border:3px solid #0b548d;object-fit:cover;object-position:center 20%;cursor:pointer}.share-title{font:italic 20px/1 Georgia,serif;color:#07558f}.share-copy{margin-top:5px;font-size:11px;line-height:1.18;color:#356182}.keep{border-left:1px solid #bdd4e3;padding-left:10px}.keep b{display:block;font-size:12px;line-height:1.05}.keep p{margin:4px 0;font-size:9px;line-height:1.2;color:#356182}.app-link{display:inline-block;font-size:10px;line-height:1.15;font-weight:900;color:#07558f}
+.brands{display:grid;grid-template-columns:repeat(3,1fr);align-items:center;gap:14px;padding:8px 26px;text-align:center}.miele{display:flex;align-items:center;justify-content:center;height:34px;background:#b71925;color:#fff;font-size:21px;font-weight:900}.sebo{font-size:26px;font-weight:900;color:#083b70}.riccar{font:24px Georgia,serif;color:#000}
+.footer{position:relative;margin-top:auto;min-height:54px;padding:14px 14px 7px;background:linear-gradient(90deg,#2a91cf,#1174b5,#09659f);color:#fff;text-align:center}.quality{font-size:11px}.since{margin-top:2px;font-size:10px;font-style:italic}.apptly{display:block;margin-top:3px;font-size:9px;color:#fff}
+.status{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#fff;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800;color:#267650;box-shadow:0 4px 16px rgba(0,0,0,.15)}
+@media(max-width:380px){body{padding:0}.card{min-height:100svh}.header{min-height:66px;padding:8px 12px 11px}.header img{height:42px}.tag .big{font-size:20px}.profile{grid-template-columns:102px 1fr;gap:11px;padding:8px 12px 7px}.portrait{width:102px;height:118px}.who h1{font-size:31px}.who .title{font-size:18px}.contactline{font-size:10px}.contactline.phone{font-size:14px}.actions{gap:6px;padding:0 10px 7px}.btn{min-height:42px;padding:5px 7px;gap:6px}.btn .ico{font-size:21px}.btn b{font-size:12px}.btn small{font-size:9px}.share{grid-template-columns:66px 1fr 1fr;margin:0 10px;padding:7px 0;gap:7px}.share-photo{width:66px;height:66px}.share-title{font-size:17px}.share-copy,.keep b{font-size:10px}.keep p,.app-link{font-size:8px}.brands{padding:6px 20px}.miele{height:30px;font-size:18px}.sebo{font-size:23px}.riccar{font-size:21px}.footer{min-height:47px;padding-top:10px}}
+@media(max-height:690px){.header{min-height:62px;padding-top:6px;padding-bottom:8px}.header img{height:39px}.tag .big{font-size:19px}.profile{grid-template-columns:94px 1fr;padding-top:6px;padding-bottom:5px}.portrait{width:94px;height:106px}.who h1{font-size:29px}.who .title{font-size:17px;margin-top:4px}.who .org{font-size:11px}.bar{margin:4px 0}.contactline{font-size:9px;margin-top:2px}.contactline.phone{font-size:13px}.quote{display:none}.actions{gap:5px;padding-bottom:6px}.btn{min-height:39px}.btn .ico{font-size:20px}.btn b{font-size:12px}.btn small{font-size:9px}.share{padding:6px 0}.share-photo{width:62px;height:62px}.share{grid-template-columns:62px 1fr 1fr}.share-title{font-size:16px}.share-copy,.keep b{font-size:9px}.keep p,.app-link{font-size:8px}.brands{padding-top:5px;padding-bottom:5px}.miele{height:28px;font-size:18px}.sebo{font-size:22px}.riccar{font-size:20px}.footer{min-height:43px;padding-top:8px}.quality{font-size:10px}.since{font-size:9px}.apptly{font-size:8px}}
 </style>
 </head>
 <body>
 <main class="card">
-<header class="header"><img src="https://carolina-vacuums-app.vercel.app/iconcv.png" alt="Carolina Vacuums and More"><div class="tag"><div class="big">A Cleaner Home.<br>A Healthier You.</div><div class="small">SALES • SERVICE • PARTS • SUPPLIES</div></div></header>
-<section class="profile"><img src="https://carolina-vacuums-app.vercel.app/heidi-card.jpg" alt="Heidi Joyce"><div class="who"><h1>Heidi Joyce</h1><div class="title">Store Manager</div><div class="org">Carolina Vacuums and More</div><div class="bar"></div><a class="phone" href="tel:3367686068">☎ &nbsp;(336) 768-6068</a><a class="email" href="mailto:carolinavacs02@gmail.com">✉ &nbsp;carolinavacs02@gmail.com</a><a class="addr" href="https://www.google.com/maps/search/?api=1&query=1025%20Hanes%20Mall%20Blvd.%2C%20Winston-Salem%2C%20NC">📍 &nbsp;1025 Hanes Mall Blvd.<br>&nbsp;&nbsp;&nbsp;&nbsp;Winston-Salem, NC</a></div><div class="side">Local People.<br>Real Service.<br>A Cleaner,<br>Healthier You.</div></section>
-<section class="actions"><a class="btn dark" href="tel:3367686068"><span class="ico">☎</span><span><b>Call Heidi</b><small>(336) 768-6068</small></span></a><a class="btn mid" href="sms:3367686068"><span class="ico">💬</span><span><b>Text Heidi</b><small>(336) 768-6068</small></span></a><a class="btn dark" href="mailto:carolinavacs02@gmail.com"><span class="ico">✉</span><span><b>Email Heidi</b></span></a><a class="btn dark" href="https://carolinavacuums.com"><span class="ico">◎</span><span><b>Visit Our Website</b><small>carolinavacuums.com</small></span></a><a class="btn mid" href="https://www.google.com/maps/search/?api=1&query=1025%20Hanes%20Mall%20Blvd.%2C%20Winston-Salem%2C%20NC"><span class="ico">📍</span><span><b>Get Directions</b><small>1025 Hanes Mall Blvd.</small></span></a><button class="btn light" id="saveContact" type="button"><span class="ico">👤+</span><span><b>Save to Contacts</b><small>Add Heidi to your phone</small></span></button></section>
-<section class="share"><button id="shareCard" type="button" style="all:unset;cursor:pointer"><img class="mini-photo" src="https://carolina-vacuums-app.vercel.app/heidi-card.jpg" alt="Heidi Joyce"></button><button id="shareCardText" type="button" class="sharecopy" style="all:unset;position:absolute;left:28%;top:14%;width:25%;cursor:pointer"><div class="head">↗ Share Me!</div><div class="copy">Send my digital<br>business card to<br>anyone.</div></button><div class="sep"></div><div class="keep"><div class="phoneicon">📱</div><div><b>Keep Me on Your Phone</b><p>Safari/Chrome → Add to Home Screen</p><a class="app-link" href="https://carolina-vacuums-app.vercel.app">Open Carolina Vacuums App</a></div></div></section>
-<section class="brands"><div class="miele">Miele</div><div class="sebo">SEBO</div><div class="riccar">RICCAR</div></section>
-<footer class="footer"><div class="quality">Quality&nbsp; • &nbsp;Savings&nbsp; • &nbsp;Convenience</div><div class="since">Serving the Carolinas since 1995</div><a class="apptly" href="https://www.myapptly.com">Built by <strong>APPTLY</strong></a></footer>
+  <header class="header">
+    <img src="https://carolina-vacuums-app.vercel.app/iconcv.png" alt="Carolina Vacuums and More">
+    <div class="tag"><div class="big">A Cleaner Home.<br>A Healthier You.</div><div class="small">SALES • SERVICE • PARTS • SUPPLIES</div></div>
+  </header>
+
+  <section class="profile">
+    <img class="portrait" src="https://carolina-vacuums-app.vercel.app/heidi-card.jpg" alt="Heidi Joyce">
+    <div class="who">
+      <h1>Heidi<br>Joyce</h1>
+      <div class="title">Store Manager</div>
+      <div class="org">Carolina Vacuums and More</div>
+      <div class="bar"></div>
+      <a class="contactline phone" href="tel:3367686068">☎ (336) 768-6068</a>
+      <a class="contactline" href="mailto:carolinavacs02@gmail.com">✉ carolinavacs02@gmail.com</a>
+      <a class="contactline" href="https://www.google.com/maps/search/?api=1&query=1025%20Hanes%20Mall%20Blvd.%2C%20Winston-Salem%2C%20NC">📍 1025 Hanes Mall Blvd., Winston-Salem, NC</a>
+    </div>
+  </section>
+  <div class="quote">Local People. Real Service. A Cleaner, Healthier You.</div>
+
+  <section class="actions">
+    <a class="btn dark" href="tel:3367686068"><span class="ico">☎</span><span><b>Call Heidi</b><small>(336) 768-6068</small></span></a>
+    <a class="btn mid" href="sms:3367686068"><span class="ico">💬</span><span><b>Text Heidi</b><small>(336) 768-6068</small></span></a>
+    <a class="btn dark" href="mailto:carolinavacs02@gmail.com"><span class="ico">✉</span><span><b>Email Heidi</b></span></a>
+    <a class="btn dark" href="https://carolinavacuums.com" target="_blank" rel="noopener"><span class="ico">◎</span><span><b>Visit Website</b><small>carolinavacuums.com</small></span></a>
+    <a class="btn mid" href="https://www.google.com/maps/search/?api=1&query=1025%20Hanes%20Mall%20Blvd.%2C%20Winston-Salem%2C%20NC" target="_blank" rel="noopener"><span class="ico">📍</span><span><b>Directions</b><small>Hanes Mall Blvd.</small></span></a>
+    <button class="btn light" id="saveContact" type="button"><span class="ico">👤+</span><span><b>Save Contact</b><small>Add Heidi to your phone</small></span></button>
+  </section>
+
+  <section class="share">
+    <button id="shareCard" type="button" style="all:unset;cursor:pointer"><img class="share-photo" src="https://carolina-vacuums-app.vercel.app/heidi-card.jpg" alt="Heidi Joyce"></button>
+    <button id="shareCardText" type="button" style="all:unset;cursor:pointer"><div class="share-title">↗ Share Me!</div><div class="share-copy">Send Heidi's digital business card to anyone.</div></button>
+    <div class="keep"><b>Keep Me on Your Phone</b><p>Safari/Chrome → Add to Home Screen</p><a class="app-link" href="https://carolina-vacuums-app.vercel.app">Open Carolina Vacuums App</a></div>
+  </section>
+
+  <section class="brands"><div class="miele">Miele</div><div class="sebo">SEBO</div><div class="riccar">RICCAR</div></section>
+  <footer class="footer"><div class="quality">Quality • Savings • Convenience</div><div class="since">Serving the Carolinas since 1995</div><a class="apptly" href="https://www.myapptly.com" target="_blank" rel="noopener">Built by <strong>APPTLY</strong></a></footer>
 </main>
 <div id="status" class="status" hidden></div>
 <script>
-const cardUrl=window.location.origin+window.location.pathname;
+const cardUrl='https://heidi-card.vercel.app';
 const status=document.getElementById('status');
 function flash(msg){status.textContent=msg;status.hidden=false;setTimeout(()=>status.hidden=true,1800)}
 async function share(){try{if(navigator.share){await navigator.share({title:'Heidi Joyce | Carolina Vacuums and More',text:'Heidi Joyce, Store Manager at Carolina Vacuums and More in Winston-Salem.',url:cardUrl})}else if(navigator.clipboard){await navigator.clipboard.writeText(cardUrl);flash('Card link copied!')}}catch(e){}}
-document.getElementById('shareCard').addEventListener('click',share);document.getElementById('shareCardText').addEventListener('click',share);
+document.getElementById('shareCard').addEventListener('click',share);
+document.getElementById('shareCardText').addEventListener('click',share);
 document.getElementById('saveContact').addEventListener('click',()=>{const v=['BEGIN:VCARD','VERSION:3.0','N:Joyce;Heidi;;;','FN:Heidi Joyce','ORG:Carolina Vacuums and More','TITLE:Store Manager','TEL;TYPE=WORK,VOICE:(336) 768-6068','EMAIL;TYPE=WORK:carolinavacs02@gmail.com','ADR;TYPE=WORK:;;1025 Hanes Mall Blvd.;Winston-Salem;NC;;;','URL:https://carolinavacuums.com','END:VCARD'].join('\r\n');const blob=new Blob([v],{type:'text/vcard;charset=utf-8'}),u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='Heidi-Joyce-Carolina-Vacuums.vcf';a.click();URL.revokeObjectURL(u)});
 </script>
 </body>
