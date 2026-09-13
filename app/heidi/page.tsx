@@ -1,97 +1,16 @@
 'use client';
-
 import { useState } from 'react';
-
-const PHONE = '3367686068';
-const PHONE_DISPLAY = '(336) 768-6068';
-const ADDRESS = '1025 Hanes Mall Blvd., Winston-Salem, NC';
-const WEBSITE = 'https://carolinavacuums.com';
-const CARD_URL = 'https://carolina-vacuums-app.vercel.app/heidi';
-
-export default function HeidiJoyceCard() {
-  const [status, setStatus] = useState('');
-
-  async function shareCard() {
-    try {
-      if (navigator.share) {
-        await navigator.share({
-          title: 'Heidi Joyce | Carolina Vacuums and More',
-          text: 'Heidi Joyce, Store Manager at Carolina Vacuums and More in Winston-Salem.',
-          url: CARD_URL,
-        });
-      } else {
-        await navigator.clipboard.writeText(CARD_URL);
-        setStatus('Card link copied!');
-      }
-    } catch {}
-  }
-
-  function saveContact() {
-    const vcard = [
-      'BEGIN:VCARD', 'VERSION:3.0', 'N:Joyce;Heidi;;;', 'FN:Heidi Joyce',
-      'ORG:Carolina Vacuums and More', 'TITLE:Store Manager',
-      `TEL;TYPE=WORK,VOICE:${PHONE_DISPLAY}`,
-      'ADR;TYPE=WORK:;;1025 Hanes Mall Blvd.;Winston-Salem;NC;;;',
-      `URL:${WEBSITE}`, 'NOTE:Winston-Salem Store Manager. SEBO - Miele - Riccar.', 'END:VCARD',
-    ].join('\r\n');
-    const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'Heidi-Joyce-Carolina-Vacuums.vcf';
-    a.click();
-    URL.revokeObjectURL(url);
-  }
-
-  const directions = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS)}`;
-  const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(CARD_URL)}`;
-  const button = 'flex min-h-[50px] items-center justify-center rounded-2xl px-3 text-center text-sm font-semibold shadow-sm';
-
-  return (
-    <main className="bg-[#eef5fb] px-2 pt-2 text-[#0b3764]">
-      <div className="mx-auto max-w-md overflow-hidden rounded-[26px] border border-[#cbddea] bg-white shadow-2xl">
-        <section className="grid grid-cols-[1.02fr_.98fr] gap-3 px-4 pt-4">
-          <div className="flex flex-col justify-center">
-            <img src="/carolina%20vacs%20logo.png" alt="Carolina Vacuums and More" className="w-full max-w-[210px]" />
-            <p className="mt-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#2e6594]">Quality • Savings • Convenience</p>
-            <div className="my-2 h-px bg-[#7aa0d1]" />
-            <h1 className="text-[clamp(2rem,7vw,2.5rem)] leading-none">Heidi Joyce</h1>
-            <p className="mt-2 text-[15px] font-extrabold text-[#1c679b]">Store Manager</p>
-            <p className="mt-1 text-[12px] font-semibold text-[#526d82]">Carolina Vacuums and More</p>
-            <p className="mt-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#6687a4]">Winston-Salem Store</p>
-            <a href={`tel:${PHONE}`} className="mt-2 text-[15px] font-extrabold text-[#0b3764] no-underline">{PHONE_DISPLAY}</a>
-            <a href={directions} target="_blank" rel="noreferrer" className="mt-1 text-[11px] leading-4 text-[#526d82] no-underline">1025 Hanes Mall Blvd.<br/>Winston-Salem, NC</a>
-          </div>
-          <img src="/heidi.png" alt="Heidi Joyce" className="h-full max-h-[300px] w-full rounded-[22px] object-cover shadow-md" />
-        </section>
-
-        <section className="grid grid-cols-2 gap-2 px-4 pt-3">
-          <a href={`tel:${PHONE}`} className={`${button} bg-[#0b4f88] text-white`}>☎ Call Heidi</a>
-          <a href={directions} target="_blank" rel="noreferrer" className={`${button} bg-[#e8f1f8]`}>⌖ Directions</a>
-          <a href={WEBSITE} target="_blank" rel="noreferrer" className={`${button} bg-[#e8f1f8]`}>◎ Website</a>
-          <button onClick={saveContact} className={`${button} bg-[#e8f1f8]`}>＋ Save Contact</button>
-          <button onClick={shareCard} className={`${button} col-span-2 bg-[#78a0d2] text-[#082e57]`}>↗ Share Heidi&apos;s Card</button>
-        </section>
-
-        {status && <p className="px-4 pt-2 text-center text-xs font-bold text-[#388166]">{status}</p>}
-
-        <section className="mx-4 mt-3 flex items-center justify-center gap-3 border-y border-[#dbe7ef] py-3 text-sm font-black">
-          <span>SEBO</span><span className="text-[#64a68c]">•</span><span>Miele</span><span className="text-[#64a68c]">•</span><span>Riccar</span>
-        </section>
-
-        <section className="mx-4 grid grid-cols-[auto_1fr] items-center gap-3 py-3">
-          <img src={qrUrl} alt="QR code for Heidi Joyce's digital business card" className="h-20 w-20 rounded-lg border-2 border-[#0b4f88] bg-white p-1" />
-          <div>
-            <p className="text-base font-bold">Share My Card</p>
-            <p className="mt-1 text-xs leading-4 text-[#526d82]">Scan to open Heidi&apos;s digital business card.</p>
-            <p className="mt-2 text-[10px] leading-4 text-[#6b7e90]">Save to phone: iPhone Safari → Share → Add to Home Screen • Android Chrome → ⋮ → Add to Home screen</p>
-          </div>
-        </section>
-
-        <section className="bg-[#0a3d70] px-4 py-3 text-center text-white">
-          <p className="text-xs italic">Serving the Carolinas since 1995</p>
-        </section>
-      </div>
-    </main>
-  );
+const PHONE='3367686068', PHONE_DISPLAY='(336) 768-6068', ADDRESS='1025 Hanes Mall Blvd., Winston-Salem, NC', WEBSITE='https://carolinavacuums.com', CARD_URL='https://carolina-vacuums-app.vercel.app/heidi';
+export default function HeidiJoyceCard(){
+ const [status,setStatus]=useState('');
+ async function shareCard(){try{if(navigator.share)await navigator.share({title:'Heidi Joyce | Carolina Vacuums and More',text:'Heidi Joyce, Store Manager at Carolina Vacuums and More in Winston-Salem.',url:CARD_URL});else{await navigator.clipboard.writeText(CARD_URL);setStatus('Card link copied!');}}catch{}}
+ function saveContact(){const v=['BEGIN:VCARD','VERSION:3.0','N:Joyce;Heidi;;;','FN:Heidi Joyce','ORG:Carolina Vacuums and More','TITLE:Store Manager',`TEL;TYPE=WORK,VOICE:${PHONE_DISPLAY}`,`URL:${WEBSITE}`,'END:VCARD'].join('\r\n');const b=new Blob([v],{type:'text/vcard'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='Heidi-Joyce-Carolina-Vacuums.vcf';a.click();URL.revokeObjectURL(u);}
+ const directions=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADDRESS)}`; const button='flex min-h-[50px] items-center justify-center rounded-2xl px-3 text-center text-sm font-semibold shadow-sm';
+ return <main className="bg-[#eef5fb] px-2 pt-2 text-[#0b3764]"><div className="mx-auto max-w-md overflow-hidden rounded-[26px] border border-[#cbddea] bg-white shadow-2xl">
+ <section className="grid grid-cols-[1.02fr_.98fr] gap-3 px-4 pt-4"><div className="flex flex-col justify-center"><img src="/carolina%20vacs%20logo.png" alt="Carolina Vacuums and More" className="w-full max-w-[210px]"/><p className="mt-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#2e6594]">Quality • Savings • Convenience</p><div className="my-2 h-px bg-[#7aa0d1]"/><h1 className="text-[clamp(2rem,7vw,2.5rem)] leading-none">Heidi Joyce</h1><p className="mt-2 text-[15px] font-extrabold text-[#1c679b]">Store Manager</p><p className="mt-1 text-[12px] font-semibold text-[#526d82]">Carolina Vacuums and More</p><p className="mt-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#6687a4]">Winston-Salem Store</p><a href={`tel:${PHONE}`} className="mt-2 text-[15px] font-extrabold text-[#0b3764] no-underline">{PHONE_DISPLAY}</a><a href={directions} className="mt-1 text-[11px] leading-4 text-[#526d82] no-underline">1025 Hanes Mall Blvd.<br/>Winston-Salem, NC</a></div><img src="/heidi.png" alt="Heidi Joyce" className="h-full max-h-[300px] w-full rounded-[22px] object-cover shadow-md"/></section>
+ <section className="grid grid-cols-2 gap-2 px-4 pt-3"><a href={`tel:${PHONE}`} className={`${button} bg-[#0b4f88] text-white`}>☎ Call Heidi</a><a href={directions} className={`${button} bg-[#e8f1f8]`}>⌖ Directions</a><a href={WEBSITE} className={`${button} bg-[#e8f1f8]`}>◎ Website</a><button onClick={saveContact} className={`${button} bg-[#e8f1f8]`}>＋ Save Contact</button><button onClick={shareCard} className={`${button} col-span-2 bg-[#78a0d2] text-[#082e57]`}>↗ Share Heidi&apos;s Card</button></section>
+ {status&&<p className="px-4 pt-2 text-center text-xs font-bold text-[#388166]">{status}</p>}
+ <section className="mx-4 mt-3 flex items-center justify-center gap-3 border-y border-[#dbe7ef] py-3 text-sm font-black"><span>SEBO</span><span className="text-[#64a68c]">•</span><span>Miele</span><span className="text-[#64a68c]">•</span><span>Riccar</span></section>
+ <section className="mx-4 grid grid-cols-[auto_1fr] items-center gap-3 py-3"><img src="/heidi.png" alt="Heidi Joyce" className="h-20 w-20 rounded-xl border-2 border-[#0b4f88] object-cover"/><div><p className="text-base font-bold">Share My Card</p><p className="mt-1 text-xs leading-4 text-[#526d82]">Tap Share Heidi&apos;s Card above to send this card.</p><p className="mt-2 text-[10px] leading-4 text-[#6b7e90]">Save to phone: iPhone Safari → Share → Add to Home Screen • Android Chrome → menu → Add to Home screen</p></div></section>
+ <section className="bg-[#0a3d70] px-4 py-3 text-center text-white"><p className="text-xs italic">Serving the Carolinas since 1995</p></section></div></main>;
 }
