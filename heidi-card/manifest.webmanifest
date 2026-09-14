@@ -1,0 +1,17 @@
+{
+  "name": "Heidi Joyce Business Card",
+  "short_name": "Heidi Joyce",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#e7f0f6",
+  "theme_color": "#0b6ead",
+  "icons": [
+    {
+      "src": "https://carolina-vacuums-app.vercel.app/heidi.png?v=1",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
